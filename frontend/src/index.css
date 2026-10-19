@@ -1,3 +1,25 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: Inter;
+  src: url("/fonts/inter/Inter-VariableFont_opsz,wght.ttf") format("ttf");
+  src: url("/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: NotoSerif;
+  src: url("/fonts/noto-serif/NotoSerif-VariableFont_wdth,wght.ttf")
+    format("ttf");
+  src: url("/fonts/noto-serif/NotoSerif-Italic-VariableFont_wdth,wght.ttf")
+    format("ttf");
+}
+
+@font-face {
+  font-family: SourceCodePro;
+  src: url("/fonts/source-code-pro/SourceCodePro-VariableFont_wght.ttf")
+    format("ttf");
+  src: url("/fonts/source-code-pro/SourceCodePro-Italic-VariableFont_wght.ttf")
+    format("ttf");
+}
