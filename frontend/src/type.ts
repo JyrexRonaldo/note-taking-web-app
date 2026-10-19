@@ -1,0 +1,1 @@
+export type ThemeVariableType = "light" | "dark" | 'system';
