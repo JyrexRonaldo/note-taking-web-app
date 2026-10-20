@@ -3,7 +3,8 @@ import Header from "../Header/Header";
 import MenuBar from "../MenuBar/MenuBar";
 // import Settings from "../Settings/Settings";
 // import Tags from "../Tags/Tags";
-import ArchivedNotes from "../ArchivedNotes/ArchivedNotes";
+// import ArchivedNotes from "../ArchivedNotes/ArchivedNotes";
+import Search from "../Search/Search";
 import { useTheme } from "../../store";
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
           <Header />
         </div>
         <div>
-          <ArchivedNotes />
+          <Search />
         </div>
         <div className="sticky bottom-0 mt-auto">
           <MenuBar />
