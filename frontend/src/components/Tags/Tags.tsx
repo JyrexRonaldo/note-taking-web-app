@@ -1,5 +1,5 @@
 import TagItem from "../TagItem/TagItem";
-import data from "../data";
+import data from "../../data";
 
 function Tags() {
   let allTags: string[] = [];

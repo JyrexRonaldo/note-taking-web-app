@@ -1,4 +1,4 @@
-import { useTheme } from "../store";
+import { useTheme } from "../../store";
 
 function MenuBar() {
   const theme = useTheme();

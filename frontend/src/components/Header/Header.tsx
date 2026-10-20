@@ -1,5 +1,5 @@
-import { useTheme, useThemeControls } from "../store";
-import type { ThemeVariableType } from "../type";
+import { useTheme, useThemeControls } from "../../store";
+import type { ThemeVariableType } from "../../type";
 
 function Header() {
   const { setTheme } = useThemeControls();

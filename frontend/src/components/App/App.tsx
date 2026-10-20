@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import Header from "../Header/Header";
 import MenuBar from "../MenuBar/MenuBar";
 // import Settings from "../Settings/Settings";
-import Tags from "../Tags/Tags";
-import { useTheme } from "../store";
+// import Tags from "../Tags/Tags";
+import ArchivedNotes from "../ArchivedNotes/ArchivedNotes";
+import { useTheme } from "../../store";
 
 function App() {
   const theme = useTheme();
@@ -31,7 +32,7 @@ function App() {
           <Header />
         </div>
         <div>
-          <Tags />
+          <ArchivedNotes />
         </div>
         <div className="sticky bottom-0 mt-auto">
           <MenuBar />
