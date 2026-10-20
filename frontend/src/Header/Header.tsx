@@ -29,7 +29,7 @@ function Header() {
         onClick={() => {
           handleSetTheme("light");
         }}
-        className="border-4 p-5"
+        className="border-4 p-5 dark:text-white"
       >
         light
       </button>
@@ -37,7 +37,7 @@ function Header() {
         onClick={() => {
           handleSetTheme("dark");
         }}
-        className="border-4 p-5"
+        className="border-4 p-5 dark:text-white"
       >
         dark
       </button>
@@ -45,7 +45,7 @@ function Header() {
         onClick={() => {
           handleSetTheme("system");
         }}
-        className="border-4 p-5"
+        className="border-4 p-5 dark:text-white"
       >
         system
       </button>

@@ -1,25 +1,33 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"); */
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @font-face {
-  font-family: Inter;
-  src: url("/fonts/inter/Inter-VariableFont_opsz,wght.ttf") format("ttf");
-  src: url("/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf") format("ttf");
+  font-family: "Inter";
+  src: url("/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  src: url("/fonts/inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: NotoSerif;
-  src: url("/fonts/noto-serif/NotoSerif-VariableFont_wdth,wght.ttf")
-    format("ttf");
+  font-family: "Noto Serif";
   src: url("/fonts/noto-serif/NotoSerif-Italic-VariableFont_wdth,wght.ttf")
-    format("ttf");
+    format("truetype");
+  src: url("/fonts/noto-serif/NotoSerif-VariableFont_wdth,wght.ttf")
+    format("truetype");
 }
 
 @font-face {
-  font-family: SourceCodePro;
-  src: url("/fonts/source-code-pro/SourceCodePro-VariableFont_wght.ttf")
-    format("ttf");
+  font-family: "Source Code Pro";
   src: url("/fonts/source-code-pro/SourceCodePro-Italic-VariableFont_wght.ttf")
-    format("ttf");
+    format("truetype");
+  src: url("/fonts/source-code-pro/SourceCodePro-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+@theme {
+  --font-inter: "Inter", "serif";
+  --font-noto-serif: "Noto Serif", "serif";
+  --font-source-code-pro: "Source Code Pro", "serif";
 }

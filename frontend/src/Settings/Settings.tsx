@@ -15,7 +15,7 @@ function Settings() {
   return (
     <div className="px-[16px] pt-[24px]">
       <div className="flex flex-col gap-[16px]">
-        <p className="h-[29px] w-[343px] font-[Inter] text-[24px]/[120%] font-bold tracking-[-0.5px] dark:text-white">
+        <p className="h-[29px] w-[343px] font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] dark:text-white">
           Settings
         </p>
         <div className="flex flex-col gap-[8px] *:flex *:gap-[8px]">

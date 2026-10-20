@@ -13,7 +13,7 @@ function MenuBar() {
   }
   return (
     <>
-      <div className="flex justify-center bg-white px-[32px] py-[12px] text-center *:flex *:h-[32px] *:w-[62.2px] *:items-center *:justify-center *:py-[4px] dark:bg-[#0E121B]">
+      <div className="flex h-[56px] justify-center border-t border-t-[#E0E4EA] bg-white px-[32px] py-[12px] text-center *:flex *:h-[32px] *:w-[62.2px] *:items-center *:justify-center *:py-[4px] dark:border-t-[#232530] dark:bg-[#0E121B]">
         <button>
           {isDark ? (
             <img

@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import Header from "../Header/Header";
 import MenuBar from "../MenuBar/MenuBar";
-import Settings from "../Settings/Settings";
+// import Settings from "../Settings/Settings";
+import Tags from "../Tags/Tags";
 import { useTheme } from "../store";
 
 function App() {
@@ -26,13 +27,13 @@ function App() {
   return (
     <>
       <div className="flex h-screen flex-col dark:bg-[#0E121B]">
-        <div>
+        <div className="sticky top-0">
           <Header />
         </div>
         <div>
-          <Settings />
+          <Tags />
         </div>
-        <div className="mt-auto">
+        <div className="sticky bottom-0 mt-auto">
           <MenuBar />
         </div>
       </div>
