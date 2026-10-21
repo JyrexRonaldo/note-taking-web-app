@@ -3,7 +3,7 @@ import { useTheme } from "../../store";
 function ResetPassword() {
   const theme = useTheme();
 
-  let isDark;
+  let isDark: boolean;
   if (theme === "light") {
     isDark = false;
   } else if (theme === "dark") {

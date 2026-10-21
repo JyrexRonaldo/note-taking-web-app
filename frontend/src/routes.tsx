@@ -4,6 +4,7 @@ import Signup from "./components/Signup/Signup";
 import AllNotes from "./components/AllNotes/AllNotes";
 import Main from "./components/Main/Main";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
+import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 
 const routes = [
   {
@@ -23,10 +24,13 @@ const routes = [
         path: "/login",
         element: <Login />,
       },
-
-    {
-        path: "/reset",
+      {
+        path: "/reset-password",
         element: <ResetPassword />,
+      },
+      {
+        path: "/forgot-password",
+        element: <ForgotPassword />,
       },
     ],
     // errorElement: <ErrorPage />,
