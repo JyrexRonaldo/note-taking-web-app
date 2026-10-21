@@ -73,7 +73,7 @@ function Signup() {
           </button>
         </div>
         <div className="flex flex-col gap-[16px] border-t border-t-1 border-[#E0E4EA] pt-[24px] text-center dark:border-[#232530]">
-          <p className="font-inter text-[14px]/[130%] tracking-[-0.2px] dark:text-[#CACFD8]">
+          <p className="font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#525866] dark:text-[#CACFD8]">
             Or log in with:
           </p>
           <button className="flex items-center justify-center rounded-[12px] border-1 border-[#CACFD8] px-[12px] py-[16px] dark:border-[#525866]">
