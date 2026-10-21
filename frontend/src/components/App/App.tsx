@@ -4,7 +4,8 @@ import MenuBar from "../MenuBar/MenuBar";
 // import Settings from "../Settings/Settings";
 // import Tags from "../Tags/Tags";
 // import ArchivedNotes from "../ArchivedNotes/ArchivedNotes";
-import Search from "../Search/Search";
+// import Search from "../Search/Search";
+import AllNotes from "../AllNotes/AllNotest";
 import { useTheme } from "../../store";
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
           <Header />
         </div>
         <div>
-          <Search />
+          <AllNotes />
         </div>
         <div className="sticky bottom-0 mt-auto">
           <MenuBar />
