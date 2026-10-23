@@ -5,6 +5,10 @@ import AllNotes from "./components/AllNotes/AllNotes";
 import Main from "./components/Main/Main";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
+import Settings from "./components/Settings/Settings";
+import ColorTheme from "./components/ColorTheme/ColorTheme";
+import FontOptions from "./components/FontOptions/FontOptions";
+import ChangePassword from "./components/ChangePassword/ChangePassword";
 
 const routes = [
   {
@@ -14,7 +18,25 @@ const routes = [
       {
         path: "/",
         element: <Main />,
-        children: [{ index: true, element: <AllNotes /> }],
+        children: [
+          { index: true, element: <AllNotes /> },
+          {
+            path: "/settings",
+            element: <Settings />,
+          },
+          {
+            path: "/settings/color-theme",
+            element: <ColorTheme />,
+          },
+          {
+            path: "/settings/font-options",
+            element: <FontOptions />,
+          },
+          {
+            path: "/settings/change-password",
+            element: <ChangePassword />,
+          },
+        ],
       },
       {
         path: "/signup",
@@ -33,7 +55,6 @@ const routes = [
         element: <ForgotPassword />,
       },
     ],
-    // errorElement: <ErrorPage />,
   },
 ];
 

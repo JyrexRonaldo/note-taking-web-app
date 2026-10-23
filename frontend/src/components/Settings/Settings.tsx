@@ -12,6 +12,19 @@ function Settings() {
     isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   }
 
+  const themeIconUrl = isDark
+    ? "/images/icon-sun-dark.svg"
+    : "/images/icon-sun.svg";
+  const fontIconUrl = isDark
+    ? "/images/icon-font-dark.svg"
+    : "/images/icon-font.svg";
+  const passwordIconUrl = isDark
+    ? "/images/icon-lock-dark.svg"
+    : "/images/icon-lock.svg";
+  const logoutIconUrl = isDark
+    ? "/images/icon-logout-dark.svg"
+    : "/images/icon-logout.svg";
+
   return (
     <div className="px-[16px] pt-[24px]">
       <div className="flex flex-col gap-[16px]">
@@ -20,38 +33,20 @@ function Settings() {
         </p>
         <div className="flex flex-col gap-[8px] *:flex *:gap-[8px]">
           <div className="py-[8px]">
-            {isDark ? (
-              <img src="/images/icon-sun-dark.svg" alt="" />
-            ) : (
-              <img src="/images/icon-sun.svg" alt="" />
-            )}
+            <img src={themeIconUrl} alt="" />
             <p className="dark:text-white">Color Theme</p>
           </div>
           <div className="py-[8px]">
-            {isDark ? (
-              <img src="/images/icon-font-dark.svg" alt="" />
-            ) : (
-              <img src="/images/icon-font.svg" alt="" />
-            )}
-
+            <img src={fontIconUrl} alt="" />
             <p className="dark:text-white">Font Theme</p>
           </div>
           <div className="py-[8px]">
-            {isDark ? (
-              <img src="/images/icon-lock-dark.svg" alt="" />
-            ) : (
-              <img src="/images/icon-lock.svg" alt="" />
-            )}
-
+            <img src={passwordIconUrl} alt="" />
             <p className="dark:text-white">Change Password</p>
           </div>
           <hr className="text-[#E0E4EA] dark:text-[#232530]" />
           <div className="py-[8px]">
-            {isDark ? (
-              <img src="/images/icon-logout-dark.svg" alt="" />
-            ) : (
-              <img src="/images/icon-logout.svg" alt="" />
-            )}
+            <img src={logoutIconUrl} alt="" />
             <p className="dark:text-white">Logout</p>
           </div>
         </div>

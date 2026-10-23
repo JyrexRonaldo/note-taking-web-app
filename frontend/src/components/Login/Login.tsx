@@ -16,9 +16,6 @@ function Login() {
   const googleIconUrl = isDark
     ? "/images/icon-google-dark.svg"
     : "/images/icon-google.svg";
-  const infoIconUrl = isDark
-    ? "/images/icon-info-dark.svg"
-    : "/images/icon-info.svg";
 
   return (
     <div className="flex h-screen items-center justify-center bg-[#F3F5F8] px-[16px] py-[10px] dark:bg-[#2B303B]">
