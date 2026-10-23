@@ -1,4 +1,5 @@
 import { useTheme } from "../../store";
+import { Link } from "react-router";
 
 function MenuBar() {
   const theme = useTheme();
@@ -31,21 +32,31 @@ function MenuBar() {
   return (
     <>
       <div className="flex h-[56px] justify-center border-t border-t-[#E0E4EA] bg-white px-[32px] py-[12px] text-center *:flex *:h-[32px] *:w-[62.2px] *:items-center *:justify-center *:py-[4px] dark:border-t-[#232530] dark:bg-[#0E121B]">
-        <button>
-          <img className="size-[24px]" src={homeIconUrl} alt="" />
-        </button>
-        <button>
-          <img className="size-[24px]" src={searchIconUrl} alt="" />
-        </button>
-        <button>
-          <img className="size-[24px]" src={archiveIconUrl} alt="" />
-        </button>
-        <button>
-          <img className="size-[24px]" src={tagIconUrl} alt="" />
-        </button>
-        <button>
-          <img className="size-[24px]" src={settingsIconUrl} alt="" />
-        </button>
+        <Link to="/">
+          <button type="button">
+            <img className="size-[24px]" src={homeIconUrl} alt="" />
+          </button>
+        </Link>
+        <Link to="/search">
+          <button type="button">
+            <img className="size-[24px]" src={searchIconUrl} alt="" />
+          </button>
+        </Link>
+        <Link to="/archived-notes">
+          <button type="button">
+            <img className="size-[24px]" src={archiveIconUrl} alt="" />
+          </button>
+        </Link>
+        <Link to="/tags">
+          <button type="button">
+            <img className="size-[24px]" src={tagIconUrl} alt="" />
+          </button>
+        </Link>
+        <Link to="/settings">
+          <button type="button">
+            <img className="size-[24px]" src={settingsIconUrl} alt="" />
+          </button>
+        </Link>
       </div>
     </>
   );

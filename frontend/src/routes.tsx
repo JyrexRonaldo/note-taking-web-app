@@ -9,6 +9,9 @@ import Settings from "./components/Settings/Settings";
 import ColorTheme from "./components/ColorTheme/ColorTheme";
 import FontOptions from "./components/FontOptions/FontOptions";
 import ChangePassword from "./components/ChangePassword/ChangePassword";
+import Search from "./components/Search/Search";
+import ArchivedNotes from "./components/ArchivedNotes/ArchivedNotes";
+import Tags from "./components/Tags/Tags";
 
 const routes = [
   {
@@ -35,6 +38,18 @@ const routes = [
           {
             path: "/settings/change-password",
             element: <ChangePassword />,
+          },
+          {
+            path: "/search",
+            element: <Search />,
+          },
+          {
+            path: "/archived-notes",
+            element: <ArchivedNotes />,
+          },
+          {
+            path: "/tags",
+            element: <Tags />,
           },
         ],
       },

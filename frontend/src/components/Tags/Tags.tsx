@@ -6,7 +6,7 @@ function Tags() {
   data.notes.forEach((note) => allTags.push(...note.tags));
   allTags = [...new Set(allTags)];
 
-  const tagElementsArray = [];
+  const tagElementsArray: React.JSX.Element[] = [];
   allTags.forEach((tag, index) =>
     tagElementsArray.push(
       <>

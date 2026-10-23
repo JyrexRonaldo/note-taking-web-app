@@ -2,7 +2,8 @@ import NoteItem from "../NoteItem/NoteItem";
 import data from "../../data";
 
 function Search() {
-  const foundNotes = [];
+  const foundNotes: { title: string; tags: string[]; lastEdited: string }[] =
+    [];
   data.notes
     .filter((note) => note.tags.includes("Dev"))
     .forEach((note) => {
@@ -13,7 +14,7 @@ function Search() {
       });
     });
 
-  const noteitemsArray = [];
+  const noteitemsArray: React.JSX.Element[] = [];
   foundNotes.forEach((note, index) => {
     noteitemsArray.push(
       <>

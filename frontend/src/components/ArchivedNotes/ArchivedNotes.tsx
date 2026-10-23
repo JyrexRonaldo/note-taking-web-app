@@ -2,7 +2,7 @@ import NoteItem from "../NoteItem/NoteItem";
 import data from "../../data";
 
 function ArchivedNotes() {
-  const allNotes = [];
+  const allNotes: { title: string; tags: string[]; lastEdited: string }[] = [];
   data.notes.forEach((note) => {
     allNotes.push({
       title: note.title,
@@ -11,7 +11,7 @@ function ArchivedNotes() {
     });
   });
 
-  const noteitemsArray = [];
+  const noteitemsArray: React.JSX.Element[] = [];
   allNotes.forEach((note, index) => {
     noteitemsArray.push(
       <>
