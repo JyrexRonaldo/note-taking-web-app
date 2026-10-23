@@ -1,6 +1,7 @@
 import type { ThemeVariableType } from "../../type";
 import Option from "../Option/Option";
 import { useTheme, useThemeControls } from "../../store";
+import { Link } from "react-router";
 
 function FontOptions() {
   const theme = useTheme();
@@ -63,12 +64,12 @@ function FontOptions() {
     <div className="px-[16px] pt-[24px]">
       <div className="flex flex-col gap-[20px] dark:gap-[24px]">
         <div className="flex flex-col gap-[12px]">
-          <div className="flex items-center gap-[8px]">
+          <Link to="/settings" className="flex items-center gap-[8px]">
             <img src={leftArrowIconUrl} alt="" />
             <p className="items-center font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#525866] dark:text-[#CACFD8]">
               Settings
             </p>
-          </div>
+          </Link>
           <div className="flex flex-col gap-[8px]">
             <p className="font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] text-[#0E121B] dark:text-[#FFFFFF]">
               Font Theme

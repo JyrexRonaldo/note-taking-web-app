@@ -1,4 +1,5 @@
 import { useTheme } from "../../store";
+import { Link } from "react-router";
 
 function ChangePassword() {
   const theme = useTheme();
@@ -23,12 +24,12 @@ function ChangePassword() {
     <div className="px-[16px] pt-[24px]">
       <div className="flex flex-col gap-[20px] dark:gap-[24px]">
         <div className="flex flex-col gap-[12px]">
-          <div className="flex items-center gap-[8px]">
+          <Link to="/settings" className="flex items-center gap-[8px]">
             <img src={leftArrowIconUrl} alt="" />
-            <p className="items-center font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#525866] dark:text-[#CACFD8]">
+            <div className="items-center font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#525866] dark:text-[#CACFD8]">
               Settings
-            </p>
-          </div>
+            </div>
+          </Link>
           <div className="">
             <p className="font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] text-[#0E121B] dark:text-[#FFFFFF]">
               Change Password

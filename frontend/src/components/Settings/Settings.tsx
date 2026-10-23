@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { useTheme } from "../../store";
 
 function Settings() {
@@ -32,18 +33,18 @@ function Settings() {
           Settings
         </p>
         <div className="flex flex-col gap-[8px] *:flex *:gap-[8px]">
-          <div className="py-[8px]">
+          <Link to="/settings/color-theme" className="py-[8px]">
             <img src={themeIconUrl} alt="" />
             <p className="dark:text-white">Color Theme</p>
-          </div>
-          <div className="py-[8px]">
+          </Link>
+          <Link to="/settings/font-options" className="py-[8px]">
             <img src={fontIconUrl} alt="" />
             <p className="dark:text-white">Font Theme</p>
-          </div>
-          <div className="py-[8px]">
+          </Link>
+          <Link to="/settings/change-password" className="py-[8px]">
             <img src={passwordIconUrl} alt="" />
             <p className="dark:text-white">Change Password</p>
-          </div>
+          </Link>
           <hr className="text-[#E0E4EA] dark:text-[#232530]" />
           <div className="py-[8px]">
             <img src={logoutIconUrl} alt="" />
