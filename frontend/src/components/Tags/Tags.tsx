@@ -1,5 +1,6 @@
 import TagItem from "../TagItem/TagItem";
 import data from "../../data";
+import NewNoteButton from "../NewNoteButton/NewNoteButton";
 
 function Tags() {
   let allTags: string[] = [];
@@ -24,9 +25,7 @@ function Tags() {
         Tags
       </p>
       <div className="flex flex-col gap-[4px]">{tagElementsArray}</div>
-      <button className="fixed right-[16px] bottom-[72px] ml-auto flex size-[48px] items-center justify-center rounded-full bg-[#335CFF] text-[#2B303B] dark:text-[#CACFD8]">
-        <img src="/images/icon-plus.svg" alt="" className="size-[30px]" />
-      </button>
+      <NewNoteButton />
     </div>
   );
 }
