@@ -1,36 +1,18 @@
-import {
-  //  useTheme,
-  useThemeControls,
-} from "../../store";
 import type { ThemeVariableType } from "../../type";
 
-function ThemeOption({
+function Option({
   mode,
   description,
   iconUrl,
   value,
+  optionSelectHandler,
 }: {
   mode: string;
   description: string;
   iconUrl: string;
   value: ThemeVariableType;
+  optionSelectHandler: (value: ThemeVariableType) => void;
 }) {
-  const { setTheme } = useThemeControls();
-  //   const theme = useTheme();
-
-  const handleSetTheme = (value: ThemeVariableType) => {
-    setTheme(value);
-  };
-
-  //   let isDark;
-  //   if (theme === "light") {
-  //     isDark = false;
-  //   } else if (theme === "dark") {
-  //     isDark = true;
-  //   } else {
-  //     isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  //   }
-
   return (
     <>
       <label htmlFor={value}>
@@ -49,7 +31,7 @@ function ThemeOption({
           <div className="ml-auto">
             <input
               onInput={() => {
-                handleSetTheme(value);
+                optionSelectHandler(value);
               }}
               type="radio"
               name="theme"
@@ -64,4 +46,4 @@ function ThemeOption({
   );
 }
 
-export default ThemeOption;
+export default Option;

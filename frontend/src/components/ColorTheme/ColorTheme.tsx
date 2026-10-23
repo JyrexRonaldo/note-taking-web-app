@@ -1,9 +1,10 @@
 import type { ThemeVariableType } from "../../type";
-import ThemeOption from "../ThemeOption/ThemeOption";
-import { useTheme } from "../../store";
+import Option from "../Option/Option";
+import { useTheme, useThemeControls } from "../../store";
 
 function ColorTheme() {
   const theme = useTheme();
+  const { setTheme } = useThemeControls();
   let isDark;
   if (theme === "light") {
     isDark = false;
@@ -37,12 +38,18 @@ function ColorTheme() {
     },
   ];
 
+  const handleSetTheme = (value: ThemeVariableType) => {
+    setTheme(value);
+  };
+
   const themeOptionElements = themeOptionsData.map((data) => (
-    <ThemeOption
+    <Option
+      key={data.value}
       mode={data.mode}
       description={data.description}
       iconUrl={data.iconUrl}
       value={data.value as ThemeVariableType}
+      optionSelectHandler={handleSetTheme}
     />
   ));
 
