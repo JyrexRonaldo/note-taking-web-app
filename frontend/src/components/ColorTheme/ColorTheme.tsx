@@ -15,7 +15,7 @@ function ColorTheme() {
   }
   const themeOptionsData = [
     {
-      mode: "Light Mode",
+      title: "Light Mode",
       description: "Pick a clean and classic light theme",
       iconUrl: isDark
         ? "/images/icon-sun-dark-color-theme.svg"
@@ -23,13 +23,13 @@ function ColorTheme() {
       value: "light",
     },
     {
-      mode: "Dark Mode",
+      title: "Dark Mode",
       description: "Select a sleek and modern dark theme",
       iconUrl: isDark ? "/images/icon-moon-dark.svg" : "/images/icon-moon.svg",
       value: "dark",
     },
     {
-      mode: "System",
+      title: "System",
       description: "Adapts to your device’s theme",
       iconUrl: isDark
         ? "/images/icon-system-theme-dark.svg"
@@ -45,7 +45,7 @@ function ColorTheme() {
   const themeOptionElements = themeOptionsData.map((data) => (
     <Option
       key={data.value}
-      mode={data.mode}
+      title={data.title}
       description={data.description}
       iconUrl={data.iconUrl}
       value={data.value as ThemeVariableType}
@@ -59,7 +59,7 @@ function ColorTheme() {
 
   return (
     <div className="px-[16px] pt-[24px]">
-      <div className="flex flex-col gap-[20px]">
+      <div className="flex flex-col gap-[20px] dark:gap-[24px]">
         <div className="flex flex-col gap-[12px]">
           <div className="flex items-center gap-[8px]">
             <img src={leftArrowIconUrl} alt="" />
@@ -78,7 +78,7 @@ function ColorTheme() {
         </div>
         <div className="flex flex-col gap-[16px]">{themeOptionElements}</div>
         <div className="flex justify-end">
-          <button className="rounded-[8px] bg-[#335CFF] px-[16px] py-[12px] text-[#FFFFFF]">
+          <button className="rounded-[8px] bg-[#335CFF] px-[16px] py-[12px] font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#FFFFFF]">
             Apply Changes
           </button>
         </div>

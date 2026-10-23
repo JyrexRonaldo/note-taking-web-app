@@ -1,13 +1,13 @@
 import type { ThemeVariableType } from "../../type";
 
 function Option({
-  mode,
+  title,
   description,
   iconUrl,
   value,
   optionSelectHandler,
 }: {
-  mode: string;
+  title: string;
   description: string;
   iconUrl: string;
   value: ThemeVariableType;
@@ -22,7 +22,7 @@ function Option({
           </div>
           <div className="flex flex-col gap-[6px]">
             <p className="font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#0E121B] dark:text-[#FFFFFF]">
-              {mode}
+              {title}
             </p>
             <p className="font-inter text-[12px]/[120%] tracking-[-0.2px] text-[#2B303B] dark:text-[#CACFD8]">
               {description}
