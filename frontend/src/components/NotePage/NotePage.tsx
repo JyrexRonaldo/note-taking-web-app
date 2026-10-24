@@ -43,7 +43,7 @@ function NotePage() {
 
   return (
     <div className="flex min-h-full flex-col gap-[12px] px-[16px] py-[20px] dark:py-[16px]">
-      <div className="flex justify-between border-b border-[#E0E4EA] pb-[12px]">
+      <div className="flex justify-between border-b border-[#E0E4EA] pb-[12px] dark:border-[#232530]">
         <div>
           <Link
             to="#"
@@ -78,7 +78,7 @@ function NotePage() {
         </div>
       </div>
       <div>
-        <p className="font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] text-[#0E121B]">
+        <p className="font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] text-[#0E121B] dark:text-[#FFFFFF]">
           React Performance Optimization
         </p>
       </div>
@@ -91,7 +91,7 @@ function NotePage() {
             </p>
           </div>
           <div className="flex items-center">
-            <p className="font-inter text-[12px]/[120%] tracking-[-0.2px] text-[#0E121B]">
+            <p className="font-inter text-[12px]/[120%] tracking-[-0.2px] text-[#0E121B] dark:text-[#FFFFFF]">
               Dev, React
             </p>
           </div>
@@ -104,14 +104,14 @@ function NotePage() {
             </p>
           </div>
           <div>
-            <p className="font-inter text-[12px]/[120%] tracking-[-0.2px] text-[#2B303B]">
+            <p className="font-inter text-[12px]/[120%] tracking-[-0.2px] text-[#2B303B] dark:text-[#CACFD8]">
               29 Oct 2024
             </p>
           </div>
         </div>
       </div>
-      <hr className="text-[#E0E4EA]" />
-      <p className="grow font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#232530]">
+      <hr className="text-[#E0E4EA] dark:text-[#232530]" />
+      <p className="grow font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#232530] dark:text-[#F3F5F8]">
         Key performance optimization techniques: 1. Code Splitting - Use
         React.lazy() for route-based splitting - Implement dynamic imports for
         heavy components 2. Memoization - useMemo for expensive calculations -
