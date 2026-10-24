@@ -9,7 +9,7 @@ function Main() {
       <div className="sticky top-0">
         <Header />
       </div>
-      <div>
+      <div className="grow">
         <Outlet />
       </div>
       <div className="sticky bottom-0 mt-auto">
