@@ -1,4 +1,4 @@
-import TagItem from "../TagItem/TagItem";
+import TagItem from "../TagTab/TagTab";
 import data from "../../data";
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
 

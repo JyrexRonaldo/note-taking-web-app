@@ -1,4 +1,4 @@
-import NoteItem from "../NoteItem/NoteItem";
+import NoteTab from "../NoteTab/NoteTab";
 import data from "../../data";
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
 
@@ -16,7 +16,7 @@ function AllNotes() {
   allNotes.forEach((note, index) => {
     noteitemsArray.push(
       <>
-        <NoteItem
+        <NoteTab
           title={note.title}
           tags={note.tags}
           lastEdited={note.lastEdited}

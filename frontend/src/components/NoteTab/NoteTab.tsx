@@ -1,6 +1,7 @@
 import { format } from "date-fns";
+import { Link } from "react-router";
 
-function NoteItem({
+function NoteTab({
   title,
   tags,
   lastEdited,
@@ -17,6 +18,7 @@ function NoteItem({
   lastEdited = format(new Date(lastEdited), "d LLL yyyy");
 
   return (
+    <Link to="/note-page">
     <div className="flex flex-col gap-[12px] p-[8px]">
       <p className="font-inter text-[16px]/[120%] font-semibold tracking-[-0.3px] text-[#0E121B] dark:text-white">
         {title}
@@ -26,7 +28,9 @@ function NoteItem({
         {lastEdited}
       </p>
     </div>
+    </Link>
+    
   );
 }
 
-export default NoteItem;
+export default NoteTab;
