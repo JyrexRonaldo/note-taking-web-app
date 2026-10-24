@@ -33,7 +33,7 @@ function CreateNote() {
 
   return (
     <div className="flex min-h-full flex-col gap-[12px] px-[16px] py-[20px] dark:py-[16px]">
-      <div className="flex justify-between border-b border-[#E0E4EA] pb-[12px]">
+      <div className="flex justify-between border-b border-[#E0E4EA] pb-[12px] dark:border-[#232530]">
         <div>
           <Link
             to="#"
@@ -65,7 +65,7 @@ function CreateNote() {
         <input
           type="text"
           name=""
-          className="w-full font-inter text-[20px]/[120%] font-bold tracking-[-0.3px] text-[#0E121B] outline-none"
+          className="w-full font-inter text-[20px]/[120%] font-bold tracking-[-0.3px] text-[#0E121B] outline-none dark:text-white"
           defaultValue={"Enter a title..."}
           id=""
         />
@@ -98,15 +98,13 @@ function CreateNote() {
           </div>
         </div>
       </div>
-      <hr className="text-[#E0E4EA]" />
+      <hr className="text-[#E0E4EA] dark:text-[#232530]" />
       <textarea
         name=""
         id=""
-        className="grow font-inter text-[12px]/[120%] tracking-[-0.2px] text-[#2B303B] outline-none"
+        className="grow font-inter text-[12px]/[120%] tracking-[-0.2px] text-[#2B303B] outline-none dark:text-[#F3F5F8]"
         defaultValue={"Start typing your note here…"}
-      >
-        
-      </textarea>
+      ></textarea>
     </div>
   );
 }

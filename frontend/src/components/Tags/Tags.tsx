@@ -13,24 +13,24 @@ function Tags() {
   allTags.forEach((tag, index) =>
     tagElementsArray.push(
       <Fragment key={index}>
-        <TagItem tagName={tag} />
-        {allTags.length - 1 !== index ? (
-          <hr className="text-[#E0E4EA] dark:text-[#232530]" />
-        ) : null}
+        <Link to="/tab-notes">
+          <TagItem tagName={tag} />
+          {allTags.length - 1 !== index ? (
+            <hr className="text-[#E0E4EA] dark:text-[#232530]" />
+          ) : null}
+        </Link>
       </Fragment>,
     ),
   );
 
   return (
-    <Link to="/tab-notes">
-      <div className="flex flex-col gap-[16px] px-[16px] pt-[20px]">
-        <p className="h-[29px] w-[343px] font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] dark:text-white">
-          Tags
-        </p>
-        <div className="flex flex-col gap-[4px]">{tagElementsArray}</div>
-        <NewNoteButton />
-      </div>
-    </Link>
+    <div className="flex flex-col gap-[16px] px-[16px] pt-[20px]">
+      <p className="h-[29px] w-[343px] font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] dark:text-white">
+        Tags
+      </p>
+      <div className="flex flex-col gap-[4px]">{tagElementsArray}</div>
+      <NewNoteButton />
+    </div>
   );
 }
 
