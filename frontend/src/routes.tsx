@@ -12,6 +12,7 @@ import ChangePassword from "./components/ChangePassword/ChangePassword";
 import Search from "./components/Search/Search";
 import ArchivedNotes from "./components/ArchivedNotes/ArchivedNotes";
 import Tags from "./components/Tags/Tags";
+import CreateNote from "./components/CreateNote/CreateNote";
 
 const routes = [
   {
@@ -51,6 +52,11 @@ const routes = [
             path: "/tags",
             element: <Tags />,
           },
+          {
+            path: "/new-note",
+            element: <CreateNote />,
+          },
+
         ],
       },
       {
