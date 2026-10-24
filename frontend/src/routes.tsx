@@ -13,6 +13,8 @@ import Search from "./components/Search/Search";
 import ArchivedNotes from "./components/ArchivedNotes/ArchivedNotes";
 import Tags from "./components/Tags/Tags";
 import CreateNote from "./components/CreateNote/CreateNote";
+import NotePage from "./components/NotePage/NotePage";
+import TagNotes from "./components/TagNotes/TagNotes";
 
 const routes = [
   {
@@ -56,7 +58,14 @@ const routes = [
             path: "/new-note",
             element: <CreateNote />,
           },
-
+          {
+            path: "/note-page",
+            element: <NotePage />,
+          },
+          {
+            path: "/tab-notes",
+            element: <TagNotes />,
+          },
         ],
       },
       {

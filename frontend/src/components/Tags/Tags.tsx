@@ -1,6 +1,7 @@
 import TagItem from "../TagTab/TagTab";
 import data from "../../data";
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
+import { Link } from "react-router";
 
 function Tags() {
   let allTags: string[] = [];
@@ -20,13 +21,15 @@ function Tags() {
   );
 
   return (
-    <div className="flex flex-col gap-[16px] px-[16px] pt-[20px]">
-      <p className="h-[29px] w-[343px] font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] dark:text-white">
-        Tags
-      </p>
-      <div className="flex flex-col gap-[4px]">{tagElementsArray}</div>
-      <NewNoteButton />
-    </div>
+    <Link to="/tab-notes">
+      <div className="flex flex-col gap-[16px] px-[16px] pt-[20px]">
+        <p className="h-[29px] w-[343px] font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] dark:text-white">
+          Tags
+        </p>
+        <div className="flex flex-col gap-[4px]">{tagElementsArray}</div>
+        <NewNoteButton />
+      </div>
+    </Link>
   );
 }
 
