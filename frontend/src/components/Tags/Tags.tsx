@@ -2,6 +2,7 @@ import TagItem from "../TagTab/TagTab";
 import data from "../../data";
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
 import { Link } from "react-router";
+import { Fragment } from "react/jsx-runtime";
 
 function Tags() {
   let allTags: string[] = [];
@@ -11,12 +12,12 @@ function Tags() {
   const tagElementsArray: React.JSX.Element[] = [];
   allTags.forEach((tag, index) =>
     tagElementsArray.push(
-      <>
+      <Fragment key={index}>
         <TagItem tagName={tag} />
         {allTags.length - 1 !== index ? (
           <hr className="text-[#E0E4EA] dark:text-[#232530]" />
         ) : null}
-      </>,
+      </Fragment>,
     ),
   );
 

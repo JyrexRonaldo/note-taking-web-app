@@ -10,8 +10,8 @@ function NoteTab({
   tags: string[];
   lastEdited: string;
 }) {
-  const tagElementsArray = tags.map((tag) => (
-    <p className="flex h-[18px] min-w-[min-content] items-center justify-center rounded-[4px] border-[1px] border-[#D4E2FF] bg-[#E0E4EA] px-[6px] py-[2px] font-inter text-[12px]/[120%] tracking-[0.2px] dark:border-[#2B303B] dark:bg-[#2B303B] dark:text-white">
+  const tagElementsArray = tags.map((tag, index) => (
+    <p key={index} className="flex h-[18px] min-w-[min-content] items-center justify-center rounded-[4px] border-[1px] border-[#D4E2FF] bg-[#E0E4EA] px-[6px] py-[2px] font-inter text-[12px]/[120%] tracking-[0.2px] dark:border-[#2B303B] dark:bg-[#2B303B] dark:text-white">
       {tag}
     </p>
   ));

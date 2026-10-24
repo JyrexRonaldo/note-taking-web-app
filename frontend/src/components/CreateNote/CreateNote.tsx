@@ -1,6 +1,5 @@
 import { useTheme } from "../../store";
-import { useNavigate } from "react-router";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 function CreateNote() {
   const theme = useTheme();
@@ -28,7 +27,6 @@ function CreateNote() {
   const tagIconUrl = isDark
     ? "/images/icon-tag-dark.svg"
     : "/images/icon-tag.svg";
-
   const clockIconUrl = isDark
     ? "/images/icon-clock-dark.svg"
     : "/images/icon-clock.svg";
