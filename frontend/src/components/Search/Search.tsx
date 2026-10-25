@@ -1,6 +1,7 @@
 import NoteTab from "../NoteTab/NoteTab";
 import data from "../../data";
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
+import { Fragment } from "react/jsx-runtime";
 
 function Search() {
   const foundNotes: { title: string; tags: string[]; lastEdited: string }[] =
@@ -18,7 +19,7 @@ function Search() {
   const noteitemsArray: React.JSX.Element[] = [];
   foundNotes.forEach((note, index) => {
     noteitemsArray.push(
-      <>
+      <Fragment key={index}>
         <NoteTab
           title={note.title}
           tags={note.tags}
@@ -27,7 +28,7 @@ function Search() {
         {foundNotes.length - 1 !== index ? (
           <hr className="text-[#E0E4EA] dark:text-[#232530]" />
         ) : null}
-      </>,
+      </Fragment>,
     );
   });
 

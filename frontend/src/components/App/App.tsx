@@ -8,6 +8,7 @@ import { useEffect } from "react";
 // import AllNotes from "../AllNotes/AllNotest";
 import { useTheme } from "../../store";
 import { Outlet } from "react-router";
+// import DeleteModal from "../DeleteModal/DeleteModal";
 
 function App() {
   const theme = useTheme();
