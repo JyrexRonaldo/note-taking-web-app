@@ -102,7 +102,7 @@ function CreateNote() {
       <textarea
         name=""
         id=""
-        className="grow font-inter text-[12px]/[120%] tracking-[-0.2px] text-[#2B303B] outline-none dark:text-[#F3F5F8]"
+        className="grow resize-none font-inter text-[12px]/[120%] tracking-[-0.2px] text-[#2B303B] outline-none dark:text-[#F3F5F8]"
         defaultValue={"Start typing your note here…"}
       ></textarea>
     </div>

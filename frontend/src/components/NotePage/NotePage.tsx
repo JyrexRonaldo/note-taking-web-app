@@ -1,10 +1,19 @@
-import { useTheme } from "../../store";
+import {
+  useTheme,
+  useDeleteModalStatusControls,
+  useArchiveModalStatusControls,
+} from "../../store";
 import { useNavigate } from "react-router";
 import { Link } from "react-router";
 
 function NotePage() {
   const theme = useTheme();
   const navigate = useNavigate();
+  const { setDeleteModalStatus } = useDeleteModalStatusControls();
+  const { setArchiveModalStatus } = useArchiveModalStatusControls();
+
+  const handleDelete = () => [setDeleteModalStatus(true)];
+  const handleArchive = () => [setArchiveModalStatus(true)];
 
   const backButtonHandler = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -57,10 +66,10 @@ function NotePage() {
           </Link>
         </div>
         <div className="flex gap-[16px]">
-          <button type="button" className="size-[18px]">
+          <button onClick={handleDelete} type="button" className="size-[18px]">
             <img src={deleteIconUrl} alt="" />
           </button>
-          <button type="button" className="size-[18px]">
+          <button onClick={handleArchive} type="button" className="size-[18px]">
             <img src={archiveIconUrl} alt="" />
           </button>
           <button

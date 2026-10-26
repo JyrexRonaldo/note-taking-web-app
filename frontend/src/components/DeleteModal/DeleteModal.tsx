@@ -1,7 +1,18 @@
-import { useTheme } from "../../store";
+import { useTheme, useDeleteModalStatusControls } from "../../store";
 
 function DeleteModal() {
   const theme = useTheme();
+  const { setDeleteModalStatus } = useDeleteModalStatusControls();
+
+  const handleDelete = (
+    e:
+      | React.MouseEvent<HTMLDivElement, MouseEvent>
+      | React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => {
+    if (e.target === e.currentTarget) {
+      setDeleteModalStatus(false);
+    }
+  };
 
   let isDark;
   if (theme === "light") {
@@ -17,7 +28,10 @@ function DeleteModal() {
     : "/images/icon-delete-modal.svg";
 
   return (
-    <div className="fixed z-2 flex h-screen w-full items-center justify-center bg-[#0E121B]/50 px-[16px]">
+    <div
+      onClick={handleDelete}
+      className="fixed z-2 flex h-screen w-full items-center justify-center bg-[#0E121B]/50 px-[16px]"
+    >
       <div className="rounded-[12px] border border-[#E0E4EA] bg-white dark:border-[#525866] dark:bg-[#2B303B]">
         <div className="flex items-start gap-[16px] p-[20px]">
           <div className="flex size-[40px] shrink-0 items-center justify-center rounded-[8px] bg-[#F3F5F8] dark:bg-[#525866]">
@@ -38,6 +52,7 @@ function DeleteModal() {
           <button
             className="rounded-[8px] bg-[#F3F5F8] px-[16px] py-[12px] text-[#525866] dark:bg-[#717784] dark:text-[#E0E4EA]"
             type="button"
+            onClick={handleDelete}
           >
             Cancel
           </button>
