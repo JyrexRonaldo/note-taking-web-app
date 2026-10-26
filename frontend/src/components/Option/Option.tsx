@@ -5,11 +5,13 @@ function Option({
   description,
   iconUrl,
   value,
+  isChecked,
   optionSelectHandler,
 }: {
   title: string;
   description: string;
   iconUrl: string;
+  isChecked: boolean;
   value: ThemeVariableType;
   optionSelectHandler: (value: ThemeVariableType) => void;
 }) {
@@ -38,6 +40,7 @@ function Option({
               value={value}
               id={value}
               className="relative h-[16px] w-[16px] appearance-none rounded-[50%] border border-[#E0E4EA] align-[-2px] checked:border-[4px] checked:border-[#335CFF]"
+              defaultChecked={isChecked}
             />
           </div>
         </div>

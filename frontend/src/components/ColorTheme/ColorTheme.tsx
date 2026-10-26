@@ -43,16 +43,20 @@ function ColorTheme() {
     setTheme(value);
   };
 
-  const themeOptionElements = themeOptionsData.map((data) => (
-    <Option
-      key={data.value}
-      title={data.title}
-      description={data.description}
-      iconUrl={data.iconUrl}
-      value={data.value as ThemeVariableType}
-      optionSelectHandler={handleSetTheme}
-    />
-  ));
+  const themeOptionElements = themeOptionsData.map((data) => {
+    const isChecked = data.value === theme ? true : false;
+    return (
+      <Option
+        key={data.value}
+        title={data.title}
+        description={data.description}
+        iconUrl={data.iconUrl}
+        isChecked={isChecked}
+        value={data.value as ThemeVariableType}
+        optionSelectHandler={handleSetTheme}
+      />
+    );
+  });
 
   const leftArrowIconUrl = isDark
     ? "/images/icon-arrow-left-dark.svg"
