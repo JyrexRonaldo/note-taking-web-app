@@ -16,7 +16,7 @@ function ForgotPassword() {
 
   return (
     <div className="flex h-screen items-center justify-center bg-[#F3F5F8] px-[16px] py-[10px] dark:bg-[#2B303B]">
-      <div className="flex min-w-[343px] flex-col gap-[16px] rounded-[12px] bg-white px-[16px] py-[40px] dark:bg-[#0E121B]">
+      <div className="flex w-full flex-col gap-[16px] rounded-[12px] bg-white px-[16px] py-[40px] sm:max-lg:max-w-[522px] lg:max-w-[540px] dark:bg-[#0E121B]">
         <div className="flex w-full items-center justify-center">
           <img src={logoUrl} alt="notes" />
         </div>
