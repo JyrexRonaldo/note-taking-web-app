@@ -2,7 +2,8 @@ import Header from "../Header/Header";
 import MenuBar from "../MenuBar/MenuBar";
 // import AllNotes from "../AllNotes/AllNotest";
 import { Outlet } from "react-router";
-import DeleteModal from "../DeleteModal/DeleteModal";
+// import DeleteModal from "../DeleteModal/DeleteModal";
+import ArchiveNoteModal from "../ArchiveNoteModal/ArchiveNoteModal";
 
 function Main() {
   return (
@@ -13,7 +14,8 @@ function Main() {
       <div className="grow">
         <Outlet />
       </div>
-        <DeleteModal />
+      {/* <DeleteModal /> */}
+      * <ArchiveNoteModal />
       <div className="sticky bottom-0 mt-auto">
         <MenuBar />
       </div>

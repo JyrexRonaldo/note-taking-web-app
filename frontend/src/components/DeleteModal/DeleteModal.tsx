@@ -1,8 +1,8 @@
 function DeleteModal() {
   return (
     <div className="fixed z-2 flex h-screen w-full items-center justify-center bg-[#0E121B]/50 px-[16px]">
-      <div className="rounded-[12px] border border-[#E0E4EA] bg-white px-[20px]">
-        <div className="flex items-start gap-[16px] py-[20px]">
+      <div className="rounded-[12px] border border-[#E0E4EA] bg-white">
+        <div className="flex items-start gap-[16px] p-[20px]">
           <div className="flex size-[40px] shrink-0 items-center justify-center rounded-[8px] bg-[#F3F5F8]">
             <img
               src="/images/icon-delete-modal.svg"
@@ -20,8 +20,8 @@ function DeleteModal() {
             </p>
           </div>
         </div>
-        <hr className="text-[#E0E4EA]"/>
-        <div className="flex justify-end gap-[16px] py-[16px]">
+        <hr className="text-[#E0E4EA]" />
+        <div className="flex justify-end gap-[16px] px-[20px] py-[16px]">
           <button
             className="rounded-[8px] bg-[#F3F5F8] px-[16px] py-[12px] text-[#525866]"
             type="button"
