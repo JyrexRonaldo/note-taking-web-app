@@ -1,5 +1,5 @@
 import { useTheme } from "../../store";
-import { Link } from "react-router";
+import MenuBarButton from "../MenuBarButton/MenuBarButton";
 
 function MenuBar() {
   const theme = useTheme();
@@ -29,34 +29,26 @@ function MenuBar() {
     ? "/images/icon-settings-dark.svg"
     : "/images/icon-settings.svg";
 
+  const buttonValues = [
+    { address: "/", iconUrl: homeIconUrl, text: "Home" },
+    { address: "/search", iconUrl: searchIconUrl, text: "Search" },
+    { address: "/archived-notes", iconUrl: archiveIconUrl, text: "Archived" },
+    { address: "/tags", iconUrl: tagIconUrl, text: "Tags" },
+    { address: "/settings", iconUrl: settingsIconUrl, text: "Settings" },
+  ];
+
+  const menuButtons = buttonValues.map((value) => (
+    <MenuBarButton
+      path={value.address}
+      iconUrl={value.iconUrl}
+      text={value.text}
+    />
+  ));
+
   return (
     <>
-      <div className="flex h-[56px] justify-center border-t border-t-[#E0E4EA] bg-white px-[32px] py-[12px] text-center *:flex *:h-[32px] *:w-[62.2px] *:items-center *:justify-center *:py-[4px] dark:border-t-[#232530] dark:bg-[#0E121B]">
-        <Link to="/">
-          <button type="button">
-            <img className="size-[24px]" src={homeIconUrl} alt="" />
-          </button>
-        </Link>
-        <Link to="/search">
-          <button type="button">
-            <img className="size-[24px]" src={searchIconUrl} alt="" />
-          </button>
-        </Link>
-        <Link to="/archived-notes">
-          <button type="button">
-            <img className="size-[24px]" src={archiveIconUrl} alt="" />
-          </button>
-        </Link>
-        <Link to="/tags">
-          <button type="button">
-            <img className="size-[24px]" src={tagIconUrl} alt="" />
-          </button>
-        </Link>
-        <Link to="/settings">
-          <button type="button">
-            <img className="size-[24px]" src={settingsIconUrl} alt="" />
-          </button>
-        </Link>
+      <div className="flex w-full justify-center border-t border-t-[#E0E4EA] bg-white px-[32px] py-[12px] text-center *:flex *:h-[32px] *:w-[62.2px] *:items-center *:justify-center *:py-[4px] sm:max-lg:h-[56px] sm:max-lg:h-[74px] sm:max-lg:items-center sm:max-lg:divide-x sm:max-lg:divide-[#F3F5F8] sm:max-lg:px-[0px] sm:max-lg:*:grow dark:border-t-[#232530] dark:bg-[#0E121B]">
+        {menuButtons}
       </div>
     </>
   );
