@@ -15,6 +15,9 @@ import Tags from "./components/Tags/Tags";
 import CreateNote from "./components/CreateNote/CreateNote";
 import NotePage from "./components/NotePage/NotePage";
 import TagNotes from "./components/TagNotes/TagNotes";
+import DeleteModal from "./components/DeleteModal/DeleteModal";
+import ArchiveNoteModal from "./components/ArchiveNoteModal/ArchiveNoteModal";
+import Toast from "./components/Toast/Toast";
 
 const routes = [
   {
@@ -83,6 +86,18 @@ const routes = [
       {
         path: "/forgot-password",
         element: <ForgotPassword />,
+      },
+      {
+        path: "/delete",
+        element: <DeleteModal />,
+      },
+      {
+        path: "/note-modal",
+        element: <ArchiveNoteModal />,
+      },
+      {
+        path: "/toast",
+        element: <Toast />,
       },
     ],
   },

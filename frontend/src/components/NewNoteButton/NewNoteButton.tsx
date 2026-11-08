@@ -10,10 +10,17 @@ function NewNoteButton() {
   return (
     <button
       type="button"
-      className="fixed right-[16px] bottom-[72px] ml-auto flex size-[48px] items-center justify-center rounded-full bg-[#335CFF] text-[#2B303B] dark:text-[#CACFD8]"
+      className="ml-auto flex size-[48px] items-center justify-center rounded-full bg-[#335CFF] text-[#2B303B] sm:max-lg:size-[64px] lg:size-auto lg:h-[41px] lg:w-[242px] lg:rounded-[8px] lg:px-[16px] lg:py-[12px] dark:text-[#CACFD8]"
       onClick={newNotehandler}
     >
-      <img src="/images/icon-plus.svg" alt="" className="size-[30px]" />
+      <img
+        src="/images/icon-plus.svg"
+        alt=""
+        className="size-[30px] lg:hidden"
+      />
+      <p className="hidden font-inter text-[16px]/[120%] font-medium text-white lg:block">
+        + Create New Note
+      </p>
     </button>
   );
 }

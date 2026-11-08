@@ -3,14 +3,14 @@ import type { ThemeVariableType } from "../../type";
 function Option({
   title,
   description,
-  iconUrl,
+  icon,
   value,
   isChecked,
   optionSelectHandler,
 }: {
   title: string;
   description: string;
-  iconUrl: string;
+  icon: React.JSX.Element;
   isChecked: boolean;
   value: ThemeVariableType;
   optionSelectHandler: (value: ThemeVariableType) => void;
@@ -20,7 +20,8 @@ function Option({
       <label htmlFor={value}>
         <div className="flex items-center gap-[16px] rounded-[12px] border border-[#E0E4EA] p-[16px] dark:border-[#2B303B]">
           <div className="rounded-[12px] border border-[#E0E4EA] p-[8px] dark:border-[#2B303B]">
-            <img src={iconUrl} alt="" className="size-[24px]" />
+            {/* <img src={iconUrl} alt="" className="size-[24px]" /> */}
+            {icon}
           </div>
           <div className="flex flex-col gap-[6px]">
             <p className="font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#0E121B] dark:text-[#FFFFFF]">

@@ -6,6 +6,8 @@ import DeleteModal from "../DeleteModal/DeleteModal";
 import ArchiveNoteModal from "../ArchiveNoteModal/ArchiveNoteModal";
 // import Toast from "../Toast/Toast";
 import { useDeleteModalStatus, useArchiveModalStatus } from "../../store";
+import Sidebar from "../Sidebar/Sidebar";
+import DesktopPageHeader from "../DesktopPageHeader/DesktopPageHeader";
 
 function Main() {
   const deleteModalStatus = useDeleteModalStatus();
@@ -13,18 +15,25 @@ function Main() {
 
   return (
     <div className="flex h-screen flex-col dark:bg-[#0E121B]">
-      <div className="sticky top-0">
+      <div className="sticky top-0 lg:hidden">
         <Header />
       </div>
-      <div className="grow">
+      <div className="grow lg:hidden">
         <Outlet />
       </div>
       {deleteModalStatus && <DeleteModal />}
       {archiveModalStatus && <ArchiveNoteModal />}
-
-      {/* <Toast /> */}
-      <div className="sticky bottom-0 mt-auto">
+      <div className="sticky bottom-0 mt-auto lg:hidden">
         <MenuBar />
+      </div>
+      <div className="hidden lg:flex lg:items-start">
+        <Sidebar />
+        <div className="flex h-full w-full flex-col">
+          <DesktopPageHeader />
+          <div className="h-full">
+            <Outlet />
+          </div>
+        </div>
       </div>
     </div>
   );
