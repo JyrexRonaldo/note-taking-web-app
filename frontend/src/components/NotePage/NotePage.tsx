@@ -5,9 +5,10 @@ import {
 } from "../../store";
 import { useNavigate } from "react-router";
 import { Link } from "react-router";
+import data from "../../data";
 
 function NotePage() {
-  // const theme = useTheme();
+  const noteData = data.notes[0]
   const navigate = useNavigate();
   const { setDeleteModalStatus } = useDeleteModalStatusControls();
   const { setArchiveModalStatus } = useArchiveModalStatusControls();
@@ -32,7 +33,6 @@ function NotePage() {
             onClick={backButtonHandler}
             className="flex items-center gap-[4px]"
           >
-            {/* <img className="size-[18px]" src={leftArrowIconUrl} alt="" /> */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -229,15 +229,9 @@ function NotePage() {
         </div>
       </div>
       <hr className="text-[#E0E4EA] dark:text-[#232530]" />
-      <p className="grow font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#232530] dark:text-[#F3F5F8]">
-        Key performance optimization techniques: 1. Code Splitting - Use
-        React.lazy() for route-based splitting - Implement dynamic imports for
-        heavy components 2. Memoization - useMemo for expensive calculations -
-        useCallback for function props - React.memo for component optimization
-        3. Virtual List Implementation - Use react-window for long lists -
-        Implement infinite scrolling TODO: Benchmark current application and
-        identify bottlenecks
-      </p>
+      <pre className="grow font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#232530] dark:text-[#F3F5F8]">
+        {noteData.content}
+      </pre>
       <hr className="hidden text-[#E0E4EA] lg:block dark:text-[#232530]" />
       <div className="hidden gap-[16px] lg:flex">
         <button
