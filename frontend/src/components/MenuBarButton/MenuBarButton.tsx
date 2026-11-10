@@ -2,12 +2,10 @@ import { Link } from "react-router";
 
 function MenuBarButton({
   path,
-  // iconUrl,
   icon,
   text,
 }: {
   path: string;
-  // iconUrl: string;
   icon: React.JSX.Element;
   text: string;
 }) {
@@ -17,7 +15,6 @@ function MenuBarButton({
         type="button"
         className="sm:max-lg:flex sm:max-lg:h-[50px] sm:max-lg:w-[80px] sm:max-lg:flex-col sm:max-lg:items-center sm:max-lg:gap-[4px] sm:max-lg:py-[4px]"
       >
-        {/* <img className="size-[24px]" src={iconUrl} alt="" /> */}
         {icon}
         <p className="hidden font-inter text-[12px]/[120%] tracking-[-0.2px] text-[#525866] sm:max-lg:block dark:text-[#99A0AE]">
           {text}

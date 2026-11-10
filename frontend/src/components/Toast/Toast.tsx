@@ -1,32 +1,18 @@
+import SvgIconCross from "../../icons/IconCross";
+import SvgIconCheckmark from "../../icons/IconCheckmark";
+
 function Toast() {
   return (
     <div className="fixed z-2 flex h-screen w-full items-center justify-center bg-[#0E121B]/50 px-[16px]">
-      <div className="flex w-[274px] sm:w-[390px] items-center gap-[8px] rounded-[8px] bg-white p-[8px] text-[#0E121B] dark:bg-[#232530] dark:text-white">
-        <img src="/images/icon-checkmark.svg" className="size-[16px]" alt="" />
+      <div className="flex w-[274px] items-center gap-[8px] rounded-[8px] bg-white p-[8px] text-[#0E121B] sm:w-[390px] dark:bg-[#232530] dark:text-white">
+        <SvgIconCheckmark className="size-[16px]" />
         <p className="grow font-inter text-[12px]/[120%] tracking-[-0.2px]">
           Note archived
         </p>
         <p className="font-inter text-[12px]/[120%] tracking-[-0.2px]">
           Archived Notes
         </p>
-        {/* <img src="/images/icon-cross.svg" className="size-[16px]" alt="" /> */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="none"
-          viewBox="0 0 24 24"
-          className="size-[16px] stroke-[#99A0AE]" 
-
-        >
-          <path
-            // stroke="#99A0AE"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="m6 6 12 12M18 6 6 18"
-          />
-        </svg>
+        <SvgIconCross className="size-[16px] stroke-[#99A0AE]" />
       </div>
     </div>
   );

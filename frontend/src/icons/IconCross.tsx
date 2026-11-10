@@ -10,7 +10,7 @@ const SvgIconCross = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      stroke="#99A0AE"
+      // stroke="#99A0AE"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}

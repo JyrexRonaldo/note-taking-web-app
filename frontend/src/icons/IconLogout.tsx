@@ -10,7 +10,7 @@ const SvgIconLogout = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      stroke="#0E121B"
+      // stroke="#0E121B"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.8}

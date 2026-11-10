@@ -1,10 +1,12 @@
 import { Link, useNavigate } from "react-router";
-// import { useTheme } from "../../store";
 import NoteTab from "../NoteTab/NoteTab";
 import data from "../../data";
 import { Fragment } from "react/jsx-runtime";
 import NotePage from "../NotePage/NotePage";
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
+import SvgIconArrowLeft from "../../icons/IconArrowLeft";
+import SvgIconArchive from "../../icons/IconArchive";
+import SvgIconDelete from "../../icons/IconDelete";
 
 function TagNotes() {
   // const theme = useTheme();
@@ -67,7 +69,8 @@ function TagNotes() {
             className="flex items-center gap-[4px]"
           >
             {/* <img className="size-[18px]" src={leftArrowIconUrl} alt="" /> */}
-            <svg
+            <SvgIconArrowLeft className="size-[18px] fill-[#000] dark:fill-[#CACFD8]" />            
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -81,7 +84,7 @@ function TagNotes() {
                 d="M15.75 20.414 7.336 12l8.414-8.414L17.164 5l-7 7 7 7-1.414 1.414Z"
                 clip-rule="evenodd"
               />
-            </svg>
+            </svg> */}
             <p className="items-center font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#525866] dark:text-[14px]/[120%] dark:font-medium dark:text-[#FFFFFF]">
               All Tags
             </p>
@@ -122,7 +125,8 @@ function TagNotes() {
           <div className="flex w-[258px] shrink-0 flex-col gap-[12px] border-l border-l-[#F0F0F0] py-[20px] pr-[0px] pl-[16px] *:flex *:h-[44px] *:w-[242px] *:gap-[8px] *:rounded-[8px] *:border *:border-[#CACFD8] *:px-[16px] *:py-[12px] dark:border-l-[#232530] *:dark:border-[#525866] **:dark:text-white">
             <button type="button">
               {/* <img className="size-[20px]" src={archiveIconUrl} alt="" /> */}
-              <svg
+              <SvgIconArchive className="size-[20px] stroke-[#525866] dark:stroke-white fill-none" />
+              {/* <svg
                 className="size-[20px] stroke-[#525866] dark:stroke-white"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -144,28 +148,13 @@ function TagNotes() {
                   stroke-width="1.5"
                   d="m15 14-3.002 3L9 14M11.998 17v-7M20.934 7H3.059"
                 />
-              </svg>
+              </svg> */}
               <p className="font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#0E121B]">
                 Archive Note
               </p>
             </button>
             <button>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="25"
-                fill="none"
-                viewBox="0 0 24 25"
-                className="size-[20px] stroke-[#525866] dark:stroke-white"
-              >
-                <path
-                  // stroke="#525866"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="m14.852 3.879.818 1.785h2.64c.811 0 1.47.658 1.47 1.47V8.22c0 .555-.45 1.005-1.006 1.005H5.005C4.45 9.226 4 8.776 4 8.221V7.133c0-.811.658-1.47 1.47-1.47h2.639l.818-1.784c.246-.536.78-.879 1.37-.879h3.185c.59 0 1.125.343 1.37.879ZM18.24 9.3v8.686c0 1.665-1.333 3.014-2.977 3.014H8.517c-1.644 0-2.977-1.349-2.977-3.014V9.301M10.2 12.816v4.509m3.38-4.509v4.509"
-                />
-              </svg>
+              <SvgIconDelete className="size-[20px] stroke-[#525866] dark:stroke-white fill-none" />
               <p className="font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#0E121B]">
                 Delete Note
               </p>

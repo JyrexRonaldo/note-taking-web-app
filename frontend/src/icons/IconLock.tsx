@@ -10,14 +10,14 @@ const SvgIconLock = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      stroke="#0E121B"
+      // stroke="#0E121B"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.8}
       d="M16.424 9.448V7.3a4.55 4.55 0 0 0-4.551-4.551 4.55 4.55 0 0 0-4.57 4.53v2.168"
     />
     <path
-      stroke="#0E121B"
+      // stroke="#0E121B"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.8}
@@ -25,7 +25,7 @@ const SvgIconLock = (props: SVGProps<SVGSVGElement>) => (
       clipRule="evenodd"
     />
     <path
-      stroke="#0E121B"
+      // stroke="#0E121B"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.8}

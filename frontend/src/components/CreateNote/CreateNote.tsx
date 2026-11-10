@@ -1,33 +1,11 @@
-// import { useTheme } from "../../store";
-
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
 import data from "../../data";
 import { Fragment } from "react/jsx-runtime";
 import NoteTab from "../NoteTab/NoteTab";
-// import NotePage from "../NotePage/NotePage";
+
 import CreatePageContent from "../CreatePageContent/CreatePageContent";
 
 function CreateNote() {
-  // const theme = useTheme();
-
-  // let isDark;
-  // if (theme === "light") {
-  //   isDark = false;
-  // } else if (theme === "dark") {
-  //   isDark = true;
-  // } else {
-  //   isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  // }
-
-  // const leftArrowIconUrl = isDark
-  //   ? "/images/icon-arrow-left-dark.svg"
-  //   : "/images/icon-arrow-left.svg";
-  // const tagIconUrl = isDark
-  //   ? "/images/icon-tag-dark.svg"
-  //   : "/images/icon-tag.svg";
-  // const clockIconUrl = isDark
-  //   ? "/images/icon-clock-dark.svg"
-  //   : "/images/icon-clock.svg";
   const allNotes: { title: string; tags: string[]; lastEdited: string }[] = [];
   data.notes.forEach((note) => {
     allNotes.push({

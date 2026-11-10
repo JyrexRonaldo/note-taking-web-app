@@ -20,7 +20,6 @@ function Option({
       <label htmlFor={value}>
         <div className="flex items-center gap-[16px] rounded-[12px] border border-[#E0E4EA] p-[16px] dark:border-[#2B303B]">
           <div className="rounded-[12px] border border-[#E0E4EA] p-[8px] dark:border-[#2B303B]">
-            {/* <img src={iconUrl} alt="" className="size-[24px]" /> */}
             {icon}
           </div>
           <div className="flex flex-col gap-[6px]">

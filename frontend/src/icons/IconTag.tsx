@@ -10,7 +10,7 @@ const SvgIconTag = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      stroke="#525866"
+      // stroke="#525866"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.8}
@@ -18,7 +18,7 @@ const SvgIconTag = (props: SVGProps<SVGSVGElement>) => (
       clipRule="evenodd"
     />
     <path
-      stroke="#525866"
+      // stroke="#525866"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.8}

@@ -1,46 +1,18 @@
-// import { useTheme } from "../../store";
 import { Link } from "react-router";
+import SvgIconArrowLeft from "../../icons/IconArrowLeft";
+import SvgIconInfo from "../../icons/IconInfo";
 
 function ChangePassword() {
-  // const theme = useTheme();
-  // let isDark;
-  // if (theme === "light") {
-  //   isDark = false;
-  // } else if (theme === "dark") {
-  //   isDark = true;
-  // } else {
-  //   isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  // }
-
-  // const leftArrowIconUrl = isDark
-  //   ? "/images/icon-arrow-left-dark.svg"
-  //   : "/images/icon-arrow-left.svg";
-
-  // const infoIconUrl = isDark
-  //   ? "/images/icon-info-dark.svg"
-  //   : "/images/icon-info.svg";
-
   return (
     <div className="px-[16px] pt-[24px] sm:max-lg:px-[32px] lg:max-w-[528px] lg:p-[0px]">
       <div className="flex flex-col gap-[20px] lg:gap-[24px] dark:gap-[24px]">
         <div className="flex flex-col gap-[12px]">
-          <Link to="/settings" className="flex items-center gap-[8px] lg:hidden">
+          <Link
+            to="/settings"
+            className="flex items-center gap-[8px] lg:hidden"
+          >
             {/* <img src={leftArrowIconUrl} alt="" /> */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="fill-black dark:fill-[#CACFD8]"
-            >
-              <path
-                // fill="#000"
-                fill-rule="evenodd"
-                d="M15.75 20.414 7.336 12l8.414-8.414L17.164 5l-7 7 7 7-1.414 1.414Z"
-                clip-rule="evenodd"
-              />
-            </svg>
+            <SvgIconArrowLeft className="size-[24px] fill-black dark:fill-[#CACFD8]" />
             <div className="items-center font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#525866] dark:text-[#CACFD8]">
               Settings
             </div>
@@ -80,22 +52,7 @@ function ChangePassword() {
               />
               <div className="flex items-center gap-[8px]">
                 {/* <img src={infoIconUrl} alt="" className="size-[16px]" /> */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  className="size-[16px] stroke-[#525866] dark:stroke-[#99A0AE]"
-                >
-                  <path
-                    // stroke="#525866"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0ZM12.006 15.693v-4.3M12 8.355v-.063"
-                  />
-                </svg>
+                <SvgIconInfo className="size-[16px] stroke-[#525866] dark:stroke-[#99A0AE]" />
                 <p className="font-inter text-[12px]/[140%] font-normal tracking-[0px] dark:text-[#99A0AE]">
                   At least 8 characters
                 </p>

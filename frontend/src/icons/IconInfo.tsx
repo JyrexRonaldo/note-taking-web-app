@@ -10,7 +10,7 @@ const SvgIconInfo = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      stroke="#525866"
+      // stroke="#525866"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
