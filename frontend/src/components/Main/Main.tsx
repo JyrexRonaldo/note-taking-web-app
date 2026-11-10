@@ -6,7 +6,7 @@ import DeleteModal from "../DeleteModal/DeleteModal";
 import ArchiveNoteModal from "../ArchiveNoteModal/ArchiveNoteModal";
 // import Toast from "../Toast/Toast";
 import { useDeleteModalStatus, useArchiveModalStatus } from "../../store";
-import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from "../SidebarNavigation/SidebarNavigation";
 import DesktopPageHeader from "../DesktopPageHeader/DesktopPageHeader";
 
 function Main() {

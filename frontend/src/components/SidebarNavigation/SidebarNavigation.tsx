@@ -29,7 +29,7 @@ function Sidebar() {
   );
 
   return (
-    <div className="flex h-screen w-[272px] flex-col border-r border-r-[#E0E4EA] px-[16px] py-[12px] dark:border-r-[#232530]">
+    <div className="flex h-screen min-w-[272px] flex-col border-r border-r-[#E0E4EA] px-[16px] py-[12px] dark:border-r-[#232530]">
       <Header />
       <div className="flex grow flex-col gap-[8px]">
         <div>

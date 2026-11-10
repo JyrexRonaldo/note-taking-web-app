@@ -4,8 +4,7 @@ import NewNoteButton from "../NewNoteButton/NewNoteButton";
 import { Fragment } from "react/jsx-runtime";
 import SearchBar from "../SearchBar/SearchBar";
 import NotePage from "../NotePage/NotePage";
-import SvgIconArchive from "../../icons/IconArchive";
-import SvgIconDelete from "../../icons/IconDelete";
+import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 
 function Search() {
   const foundNotes: { title: string; tags: string[]; lastEdited: string }[] =
@@ -72,20 +71,7 @@ function Search() {
           <div className="grow">
             <NotePage />
           </div>
-          <div className="flex w-[258px] shrink-0 flex-col gap-[12px] border-l border-l-[#F0F0F0] py-[20px] pr-[0px] pl-[16px] *:flex *:h-[44px] *:w-[242px] *:gap-[8px] *:rounded-[8px] *:border *:border-[#CACFD8] *:px-[16px] *:py-[12px] dark:border-l-[#232530] *:dark:border-[#525866] **:dark:text-white">
-            <button type="button">
-              <SvgIconArchive className="size-[20px] stroke-[#525866] dark:stroke-white fill-none" />
-              <p className="font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#0E121B]">
-                Archive Note
-              </p>
-            </button>
-            <button>
-              <SvgIconDelete className="size-[20px] stroke-[#525866] dark:stroke-white fill-none" />
-              <p className="font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#0E121B]">
-                Delete Note
-              </p>
-            </button>
-          </div>
+          <SidebarRightMenu />
         </div>
       </div>
     </>

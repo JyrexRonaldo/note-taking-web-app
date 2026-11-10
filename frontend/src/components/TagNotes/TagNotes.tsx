@@ -5,8 +5,7 @@ import { Fragment } from "react/jsx-runtime";
 import NotePage from "../NotePage/NotePage";
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
 import SvgIconArrowLeft from "../../icons/IconArrowLeft";
-import SvgIconArchive from "../../icons/IconArchive";
-import SvgIconDelete from "../../icons/IconDelete";
+import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 
 function TagNotes() {
   // const theme = useTheme();
@@ -46,19 +45,6 @@ function TagNotes() {
     );
   });
 
-  // let isDark;
-  // if (theme === "light") {
-  //   isDark = false;
-  // } else if (theme === "dark") {
-  //   isDark = true;
-  // } else {
-  //   isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  // }
-
-  // const leftArrowIconUrl = isDark
-  //   ? "/images/icon-arrow-left-dark.svg"
-  //   : "/images/icon-arrow-left.svg";
-
   return (
     <>
       <div className="flex flex-col gap-[16px] px-[16px] pt-[20px] dark:pt-[24px] lg:hidden">
@@ -68,23 +54,7 @@ function TagNotes() {
             onClick={backButtonHandler}
             className="flex items-center gap-[4px]"
           >
-            {/* <img className="size-[18px]" src={leftArrowIconUrl} alt="" /> */}
             <SvgIconArrowLeft className="size-[18px] fill-[#000] dark:fill-[#CACFD8]" />            
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="size-[18px] fill-[#000] dark:fill-[#CACFD8]"
-            >
-              <path
-                // fill="#CACFD8"
-                fill-rule="evenodd"
-                d="M15.75 20.414 7.336 12l8.414-8.414L17.164 5l-7 7 7 7-1.414 1.414Z"
-                clip-rule="evenodd"
-              />
-            </svg> */}
             <p className="items-center font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#525866] dark:text-[14px]/[120%] dark:font-medium dark:text-[#FFFFFF]">
               All Tags
             </p>
@@ -122,44 +92,7 @@ function TagNotes() {
           <div className="grow">
             <NotePage />
           </div>
-          <div className="flex w-[258px] shrink-0 flex-col gap-[12px] border-l border-l-[#F0F0F0] py-[20px] pr-[0px] pl-[16px] *:flex *:h-[44px] *:w-[242px] *:gap-[8px] *:rounded-[8px] *:border *:border-[#CACFD8] *:px-[16px] *:py-[12px] dark:border-l-[#232530] *:dark:border-[#525866] **:dark:text-white">
-            <button type="button">
-              {/* <img className="size-[20px]" src={archiveIconUrl} alt="" /> */}
-              <SvgIconArchive className="size-[20px] stroke-[#525866] dark:stroke-white fill-none" />
-              {/* <svg
-                className="size-[20px] stroke-[#525866] dark:stroke-white"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  // stroke="#525866"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M21 7.782v8.435C21 19.165 18.919 21 15.974 21H8.026C5.081 21 3 19.165 3 16.216V7.782C3 4.834 5.081 3 8.026 3h7.948C18.919 3 21 4.843 21 7.782Z"
-                />
-                <path
-                  // stroke="#525866"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="m15 14-3.002 3L9 14M11.998 17v-7M20.934 7H3.059"
-                />
-              </svg> */}
-              <p className="font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#0E121B]">
-                Archive Note
-              </p>
-            </button>
-            <button>
-              <SvgIconDelete className="size-[20px] stroke-[#525866] dark:stroke-white fill-none" />
-              <p className="font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#0E121B]">
-                Delete Note
-              </p>
-            </button>
-          </div>
+          <SidebarRightMenu />
         </div>
       </div>
     </>
