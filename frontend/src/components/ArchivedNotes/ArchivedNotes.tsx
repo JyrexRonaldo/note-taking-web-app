@@ -4,6 +4,7 @@ import NewNoteButton from "../NewNoteButton/NewNoteButton";
 import { Fragment } from "react/jsx-runtime";
 import NotePage from "../NotePage/NotePage";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
+import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
 
 function ArchivedNotes() {
   const allNotes: { title: string; tags: string[]; lastEdited: string }[] = [];
@@ -51,20 +52,9 @@ function ArchivedNotes() {
       </div>
       <div className="h-full max-lg:hidden">
         <div className="flex h-full pr-[32px]">
-          <div className="flex flex-col gap-[16px] border-r border-r-[#E0E4EA] py-[20px] pr-[16px] pl-[32px] max-lg:hidden dark:border-r-[#232530]">
-            <div className="w-min">
-              <NewNoteButton />
-            </div>
-            <p className="w-full font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#2B303B] dark:text-[#E0E4EA]">
-              All your archived notes are stored here. You can restore or delete
-              them anytime.
-            </p>
-            <div className="flex h-[200px] grow scrollbar-none flex-col gap-[4px] overflow-scroll">
-              {noteitemsArray}
-            </div>
-          </div>
+          <SidebarAllNotes page="archived" noteitemsArray={noteitemsArray} />
           <div className="grow">
-            <NotePage />
+            <NotePage page="archived" />
           </div>
           <SidebarRightMenu archivedPage={true} />
         </div>

@@ -10,7 +10,7 @@ function NewNoteButton() {
   return (
     <button
       type="button"
-      className="ml-auto flex size-[48px] items-center justify-center rounded-full bg-[#335CFF] text-[#2B303B] sm:max-lg:size-[64px] lg:size-auto lg:h-[41px] lg:w-[242px] lg:rounded-[8px] lg:px-[16px] lg:py-[12px] dark:text-[#CACFD8]"
+      className="ml-auto flex size-[48px] items-center justify-center rounded-full bg-[#335CFF] text-[#2B303B] sm:max-lg:size-[64px] lg:size-auto lg:h-[41px] lg:w-full lg:rounded-[8px] lg:px-[16px] lg:py-[12px] dark:text-[#CACFD8]"
       onClick={newNotehandler}
     >
       <img

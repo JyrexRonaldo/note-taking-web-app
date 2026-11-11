@@ -4,7 +4,7 @@ import NewNoteButton from "../NewNoteButton/NewNoteButton";
 import { Fragment } from "react/jsx-runtime";
 import NotePage from "../NotePage/NotePage";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
-
+import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
 
 function AllNotes() {
   const allNotes: { title: string; tags: string[]; lastEdited: string }[] = [];
@@ -45,14 +45,7 @@ function AllNotes() {
       </div>
       <div className="h-full max-lg:hidden">
         <div className="flex h-full pr-[32px]">
-          <div className="flex flex-col gap-[16px] border-r border-r-[#E0E4EA] py-[20px] pr-[16px] pl-[32px] max-lg:hidden dark:border-r-[#232530]">
-            <div className="w-min">
-              <NewNoteButton />
-            </div>
-            <div className="flex h-[200px] grow scrollbar-none flex-col gap-[4px] overflow-scroll">
-              {noteitemsArray}
-            </div>
-          </div>
+          <SidebarAllNotes noteitemsArray={noteitemsArray} />
           <div className="grow">
             <NotePage />
           </div>

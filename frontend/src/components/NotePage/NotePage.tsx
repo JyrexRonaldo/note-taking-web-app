@@ -12,7 +12,7 @@ import SvgIconTag from "../../icons/IconTag";
 import SvgIconStatus from "../../icons/IconStatus";
 import SvgIconClock from "../../icons/IconClock";
 
-function NotePage() {
+function NotePage({page} : {page?: string}) {
   const noteData = data.notes[0];
   const navigate = useNavigate();
   const { setDeleteModalStatus } = useDeleteModalStatusControls();
@@ -85,7 +85,7 @@ function NotePage() {
             </p>
           </div>
         </div>
-        <div className="flex gap-[8px]">
+        {page === "archived" &&  <div className="flex gap-[8px]">
           <div className="flex min-w-[115px] items-center gap-[6px] py-[4px]">
             <SvgIconStatus className="size-[16px] fill-[#2B303B] dark:fill-[#CACFD8]" />
             <p className="items-center font-inter text-[12px]/[120%] tracking-[-0.2px] text-[#2B303B] sm:max-lg:text-[14px]/[130%] dark:text-[#CACFD8]">
@@ -97,7 +97,7 @@ function NotePage() {
               Archived
             </p>
           </div>
-        </div>
+        </div>}
         <div className="flex items-center gap-[8px]">
           <div className="flex min-w-[115px] items-center gap-[6px] py-[4px]">
             <SvgIconClock className="size-[16px] fill-[#2B303B] dark:fill-[#CACFD8]" />
