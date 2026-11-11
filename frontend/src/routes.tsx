@@ -32,18 +32,21 @@ const routes = [
           {
             path: "/settings",
             element: <Settings />,
-          },
-          {
-            path: "/settings/color-theme",
-            element: <ColorTheme />,
-          },
-          {
-            path: "/settings/font-options",
-            element: <FontOptions />,
-          },
-          {
-            path: "/settings/change-password",
-            element: <ChangePassword />,
+            children: [
+              { index: true, element: <ColorTheme /> },
+              {
+                path: "/settings/color-theme",
+                element: <ColorTheme />,
+              },
+              {
+                path: "/settings/font-options",
+                element: <FontOptions />,
+              },
+              {
+                path: "/settings/change-password",
+                element: <ChangePassword />,
+              },
+            ],
           },
           {
             path: "/search",
