@@ -2,7 +2,7 @@ import NoteTab from "../NoteTab/NoteTab";
 import data from "../../data";
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
 import { Fragment } from "react/jsx-runtime";
-import NotePage from "../NotePage/NotePage";
+import NotePageContent from "../NotePageContent/NotePageContent";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
 
@@ -54,7 +54,7 @@ function ArchivedNotes() {
         <div className="flex h-full pr-[32px]">
           <SidebarAllNotes page="archived" noteitemsArray={noteitemsArray} />
           <div className="grow">
-            <NotePage page="archived" />
+            <NotePageContent page="archived" />
           </div>
           <SidebarRightMenu archivedPage={true} />
         </div>

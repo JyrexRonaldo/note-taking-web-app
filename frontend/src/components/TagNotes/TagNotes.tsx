@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router";
 import NoteTab from "../NoteTab/NoteTab";
 import data from "../../data";
 import { Fragment } from "react/jsx-runtime";
-import NotePage from "../NotePage/NotePage";
+import NotePageContent from "../NotePageContent/NotePageContent";
 import SvgIconArrowLeft from "../../icons/IconArrowLeft";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
@@ -78,7 +78,7 @@ function TagNotes() {
         <div className="flex h-full pr-[32px]">
           <SidebarAllNotes page="tag" noteitemsArray={noteitemsArray} />
           <div className="grow">
-            <NotePage />
+            <NotePageContent />
           </div>
           <SidebarRightMenu />
         </div>

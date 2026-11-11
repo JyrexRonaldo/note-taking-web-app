@@ -2,7 +2,7 @@ import NoteTab from "../NoteTab/NoteTab";
 import data from "../../data";
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
 import { Fragment } from "react/jsx-runtime";
-import NotePage from "../NotePage/NotePage";
+import NotePageContent from "../NotePageContent/NotePageContent";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
 
@@ -47,7 +47,7 @@ function AllNotes() {
         <div className="flex h-full pr-[32px]">
           <SidebarAllNotes noteitemsArray={noteitemsArray} />
           <div className="grow">
-            <NotePage />
+            <NotePageContent />
           </div>
           <SidebarRightMenu />
         </div>

@@ -3,7 +3,7 @@ import data from "../../data";
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
 import { Fragment } from "react/jsx-runtime";
 import SearchBar from "../SearchBar/SearchBar";
-import NotePage from "../NotePage/NotePage";
+import NotePageContent from "../NotePageContent/NotePageContent";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 
 function Search() {
@@ -69,7 +69,7 @@ function Search() {
             </div>
           </div>
           <div className="grow">
-            <NotePage />
+            <NotePageContent />
           </div>
           <SidebarRightMenu />
         </div>
