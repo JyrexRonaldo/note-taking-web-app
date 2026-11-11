@@ -36,7 +36,7 @@ function NotePage() {
       </div>
       <div className="h-full max-lg:hidden">
         <div className="flex h-full pr-[32px]">
-          <SidebarAllNotes page="new" noteitemsArray={noteitemsArray} />
+          <SidebarAllNotes noteitemsArray={noteitemsArray} />
           <div className="grow pr-[258px]">
             <div className="flex min-h-full flex-col gap-[12px] px-[16px] py-[20px] lg:gap-[16px] lg:px-[24px] dark:py-[16px]">
               <NotePageContent />

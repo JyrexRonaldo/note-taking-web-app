@@ -46,7 +46,7 @@ function AllNotes() {
       <div className="h-full max-lg:hidden">
         <div className="flex h-full pr-[32px]">
           <SidebarAllNotes noteitemsArray={noteitemsArray} />
-          <div className="grow">
+          <div className="grow flex min-h-full flex-col gap-[12px] px-[16px] py-[20px] lg:gap-[16px] lg:px-[24px] dark:py-[16px]">
             <NotePageContent />
           </div>
           <SidebarRightMenu />

@@ -77,7 +77,7 @@ function TagNotes() {
       <div className="h-full max-lg:hidden">
         <div className="flex h-full pr-[32px]">
           <SidebarAllNotes page="tag" noteitemsArray={noteitemsArray} />
-          <div className="grow">
+          <div className="flex min-h-full grow flex-col gap-[12px] px-[16px] py-[20px] lg:gap-[16px] lg:px-[24px] dark:py-[16px]">
             <NotePageContent />
           </div>
           <SidebarRightMenu />
