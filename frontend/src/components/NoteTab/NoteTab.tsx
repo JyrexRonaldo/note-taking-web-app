@@ -2,10 +2,12 @@ import { format } from "date-fns";
 import { Link } from "react-router";
 
 function NoteTab({
+  id,
   title,
   tags,
   lastEdited,
 }: {
+  id: number,
   title: string;
   tags: string[];
   lastEdited: string;
@@ -18,7 +20,7 @@ function NoteTab({
   lastEdited = format(new Date(lastEdited), "d LLL yyyy");
 
   return (
-    <Link to="/note-page">
+    <Link to={`/allNotes/note-page/${id}`}>
     <div className="flex flex-col gap-[12px] p-[8px]">
       <p className="font-inter text-[16px]/[120%] font-semibold tracking-[-0.3px] text-[#0E121B] dark:text-white">
         {title}

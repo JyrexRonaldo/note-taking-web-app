@@ -28,7 +28,17 @@ const routes = [
         path: "/",
         element: <Main />,
         children: [
-          { index: true, element: <AllNotes /> },
+          // { index: true, element: <AllNotes /> },
+          {
+            path: "/allNotes",
+            element: <AllNotes />,
+            children: [
+              {
+                path: "/allNotes/note-page/:id",
+                element: <NotePage />,
+              },
+            ],
+          },
           {
             path: "/settings",
             element: <Settings />,
@@ -64,10 +74,7 @@ const routes = [
             path: "/new-note",
             element: <CreateNote />,
           },
-          {
-            path: "/note-page",
-            element: <NotePage />,
-          },
+
           {
             path: "/tab-notes",
             element: <TagNotes />,

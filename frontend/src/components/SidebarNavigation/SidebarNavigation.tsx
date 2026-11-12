@@ -33,7 +33,7 @@ function Sidebar() {
       <Header />
       <div className="flex grow flex-col gap-[8px]">
         <div>
-          <Link to="/">
+          <Link to="/allNotes">
             <button className="flex w-full items-center gap-[8px] rounded-[8px] px-[12px] py-[10px]">
               <SvgIconHome className="size-[20px] fill-[#525866] dark:fill-[#FFFFFF]" />
               <p className="font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] dark:text-[#E0E4EA]">

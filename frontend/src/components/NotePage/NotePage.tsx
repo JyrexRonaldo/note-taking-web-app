@@ -3,7 +3,7 @@ import {
   useArchiveModalStatusControls,
 } from "../../store";
 import { useNavigate } from "react-router";
-import { Link } from "react-router";
+import { Link, useParams } from "react-router";
 import data from "../../data";
 import SvgIconArrowLeft from "../../icons/IconArrowLeft";
 import SvgIconDelete from "../../icons/IconDelete";
@@ -11,9 +11,11 @@ import SvgIconArchive from "../../icons/IconArchive";
 import SvgIconTag from "../../icons/IconTag";
 import SvgIconStatus from "../../icons/IconStatus";
 import SvgIconClock from "../../icons/IconClock";
+import { format } from "date-fns";
 
 function NotePage({ page }: { page?: string }) {
-  const noteData = data.notes[0];
+  const params = useParams();
+  // const noteData = data.notes[0];
   const navigate = useNavigate();
   const { setDeleteModalStatus } = useDeleteModalStatusControls();
   const { setArchiveModalStatus } = useArchiveModalStatusControls();
@@ -28,14 +30,31 @@ function NotePage({ page }: { page?: string }) {
     navigate(-1); // Goes back to the previous page
   };
 
+  // console.log(params);
+
+  const selectedNoteData = data.notes.find(
+    (note) => note.id === Number(params.id),
+  );
+
+  // console.log(selectedNoteData);
+
+  const selectedNoteTags = selectedNoteData?.tags.join(", ");
+
+  let lastEdited 
+  
+  if (selectedNoteData) {
+    
+    lastEdited = format(new Date(selectedNoteData.lastEdited), "d LLL yyyy");
+  }
+
   return (
     <>
-      <div className="flex min-h-full flex-col gap-[12px] px-[16px] py-[20px] lg:gap-[16px] lg:px-[24px] dark:py-[16px]">
+      <div className="flex min-h-full grow flex-col gap-[12px] px-[16px] py-[20px] lg:gap-[16px] lg:px-[24px] dark:py-[16px]">
         <div className="flex justify-between border-b border-[#E0E4EA] pb-[12px] lg:hidden dark:border-[#232530]">
           <div>
             <Link
-              to="#"
-              onClick={backButtonHandler}
+              to="/allNotes"
+              // onClick={backButtonHandler}
               className="flex items-center gap-[4px]"
             >
               <SvgIconArrowLeft className="size-[18px] fill-[#000] dark:fill-[#CACFD8]" />
@@ -77,7 +96,7 @@ function NotePage({ page }: { page?: string }) {
         </div>
         <div>
           <p className="font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] text-[#0E121B] dark:text-[#FFFFFF]">
-            React Performance Optimization
+            {selectedNoteData?.title}
           </p>
         </div>
         <div className="flex flex-col gap-[4px]">
@@ -90,7 +109,7 @@ function NotePage({ page }: { page?: string }) {
             </div>
             <div className="flex items-center">
               <p className="font-inter text-[12px]/[120%] tracking-[-0.2px] text-[#0E121B] sm:max-lg:text-[14px]/[130%] dark:text-[#FFFFFF]">
-                Dev, React
+                {selectedNoteTags}
               </p>
             </div>
           </div>
@@ -118,14 +137,14 @@ function NotePage({ page }: { page?: string }) {
             </div>
             <div>
               <p className="font-inter text-[12px]/[120%] tracking-[-0.2px] text-[#2B303B] sm:max-lg:text-[14px]/[130%] dark:text-[#CACFD8]">
-                29 Oct 2024
+                {lastEdited}
               </p>
             </div>
           </div>
         </div>
         <hr className="text-[#E0E4EA] dark:text-[#232530]" />
         <pre className="grow font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#232530] dark:text-[#F3F5F8]">
-          {noteData.content}
+          {selectedNoteData?.content}
         </pre>
         <hr className="hidden text-[#E0E4EA] lg:block dark:text-[#232530]" />
         <div className="hidden gap-[16px] lg:flex">
