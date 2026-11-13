@@ -5,9 +5,15 @@ import CreatePageContent from "../CreatePageContent/CreatePageContent";
 import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
 
 function CreateNote() {
-  const allNotes: { title: string; tags: string[]; lastEdited: string }[] = [];
+  const allNotes: {
+    id: number;
+    title: string;
+    tags: string[];
+    lastEdited: string;
+  }[] = [];
   data.notes.forEach((note) => {
     allNotes.push({
+      id: note.id,
       title: note.title,
       tags: note.tags,
       lastEdited: note.lastEdited,
@@ -19,6 +25,7 @@ function CreateNote() {
     noteitemsArray.push(
       <Fragment key={index}>
         <NoteTab
+          id={note.id}
           title={note.title}
           tags={note.tags}
           lastEdited={note.lastEdited}
@@ -38,8 +45,8 @@ function CreateNote() {
       <div className="h-full max-lg:hidden">
         <div className="flex h-full pr-[32px]">
           <SidebarAllNotes page="new" noteitemsArray={noteitemsArray} />
-          <div className="grow pr-[258px]" >
-            <div className="flex min-h-full  flex-col gap-[12px] border-r border-r-[#E0E4EA] px-[16px] py-[20px] sm:gap-[16px] sm:px-[32px] lg:px-[24px] dark:border-r-[#232530] dark:py-[16px]">
+          <div className="grow pr-[258px]">
+            <div className="flex min-h-full flex-col gap-[12px] border-r border-r-[#E0E4EA] px-[16px] py-[20px] sm:gap-[16px] sm:px-[32px] lg:px-[24px] dark:border-r-[#232530] dark:py-[16px]">
               <CreatePageContent />
             </div>
           </div>

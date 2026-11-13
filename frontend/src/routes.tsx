@@ -40,6 +40,26 @@ const routes = [
             ],
           },
           {
+            path: "/archived-notes",
+            element: <ArchivedNotes />,
+            children: [
+              {
+                path: "/archived-notes/note-page/:id",
+                element: <NotePage />,
+              },
+            ],
+          },
+          {
+            path: "/tab-notes",
+            element: <TagNotes />,
+            children: [
+              {
+                path: "/tab-notes/note-page/:id",
+                element: <NotePage />,
+              },
+            ],
+          },
+          {
             path: "/settings",
             element: <Settings />,
             children: [
@@ -59,31 +79,16 @@ const routes = [
             ],
           },
           {
-            path: "/search",
-            element: <Search />,
-          },
-          {
-            path: "/archived-notes",
-            element: <ArchivedNotes />,
-            children: [
-              {
-                path: "/archived-notes/note-page/:id",
-                element: <NotePage />,
-              },
-            ],
-          },
-          {
             path: "/tags",
             element: <Tags />,
           },
           {
+            path: "/search",
+            element: <Search />,
+          },
+          {
             path: "/new-note",
             element: <CreateNote />,
-          },
-
-          {
-            path: "/tab-notes",
-            element: <TagNotes />,
           },
         ],
       },

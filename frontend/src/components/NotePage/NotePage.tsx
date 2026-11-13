@@ -13,7 +13,7 @@ import SvgIconStatus from "../../icons/IconStatus";
 import SvgIconClock from "../../icons/IconClock";
 import { format } from "date-fns";
 
-function NotePage({ page }: { page?: string }) {
+function NotePage() {
   const params = useParams();
   // const noteData = data.notes[0];
   // const navigate = useNavigate();
@@ -36,33 +36,30 @@ function NotePage({ page }: { page?: string }) {
     (note) => note.id === Number(params.id),
   );
 
-  const location = useLocation()
-  console.log(location.pathname)
-  let goBackLink = ''
-  if (location.pathname.includes('allNotes') ) {
-    goBackLink = '/allNotes'
-  } else if (location.pathname.includes('archived-notes')) {
-    goBackLink = '/archived-notes'
+  const location = useLocation();
+  console.log(location.pathname);
+  let goBackLink = "";
+  if (location.pathname.includes("allNotes")) {
+    goBackLink = "/allNotes";
+  } else if (location.pathname.includes("archived-notes")) {
+    goBackLink = "/archived-notes";
+  } else if (location.pathname.includes("tab-notes")) {
+    goBackLink = "/tab-notes";
   }
-
-
 
   // console.log(selectedNoteData);
 
   const selectedNoteTags = selectedNoteData?.tags.join(", ");
 
-  let lastEdited 
-  
+  let lastEdited;
+
   if (selectedNoteData) {
-    
     lastEdited = format(new Date(selectedNoteData.lastEdited), "d LLL yyyy");
   }
 
-
-
   return (
     <>
-      <div className="flex min-h-full grow flex-col gap-[12px] px-[16px] sm:max-lg:px-[32px] sm:max-lg:py-[24px] py-[20px] lg:gap-[16px] lg:px-[24px] dark:py-[20px]">
+      <div className="flex min-h-full grow flex-col gap-[12px] px-[16px] py-[20px] sm:max-lg:px-[32px] sm:max-lg:py-[24px] lg:gap-[16px] lg:px-[24px] dark:py-[20px]">
         <div className="flex justify-between border-b border-[#E0E4EA] pb-[12px] lg:hidden dark:border-[#232530]">
           <div>
             <Link
@@ -126,7 +123,7 @@ function NotePage({ page }: { page?: string }) {
               </p>
             </div>
           </div>
-          {page === "archived" && (
+          {goBackLink === "/archived-notes" && (
             <div className="flex gap-[8px]">
               <div className="flex min-w-[115px] items-center gap-[6px] py-[4px]">
                 <SvgIconStatus className="size-[16px] fill-[#2B303B] dark:fill-[#CACFD8]" />
