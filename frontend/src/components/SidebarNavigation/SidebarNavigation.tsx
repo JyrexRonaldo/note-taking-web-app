@@ -6,9 +6,10 @@ import data from "../../data";
 import SvgIconHome from "../../icons/IconHome";
 import SvgIconArchive from "../../icons/IconArchive";
 import SvgIconChevronRight from "../../icons/IconChevronRight";
+import { useLocation } from "react-router";
 
 function Sidebar() {
-  
+  const location = useLocation();
   let allTags: string[] = [];
   data.notes.forEach((note) => allTags.push(...note.tags));
   //This is used to remove duplicates
@@ -39,15 +40,20 @@ function Sidebar() {
               <p className="font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] dark:text-[#E0E4EA]">
                 All Notes
               </p>
+              {location.pathname.includes("allNotes") && (
+                <SvgIconChevronRight className="ml-auto size-[24px] fill-[#000] dark:fill-[#FFF]" />
+              )}
             </button>
           </Link>
           <Link to="/archived-notes">
             <button className="flex w-full items-center gap-[8px] rounded-[8px] px-[12px] py-[10px]">
-              <SvgIconArchive className="size-[20px] stroke-[#525866] dark:stroke-white fill-none" />
+              <SvgIconArchive className="size-[20px] fill-none stroke-[#525866] dark:stroke-white" />
               <p className="font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] dark:text-[#E0E4EA]">
                 Archived Notes
               </p>
-              <SvgIconChevronRight className="size-[24px] fill-[#000] dark:fill-[#FFF] ml-auto" />
+              {location.pathname.includes("archived-notes") && (
+                <SvgIconChevronRight className="ml-auto size-[24px] fill-[#000] dark:fill-[#FFF]" />
+              )}
             </button>
           </Link>
         </div>
