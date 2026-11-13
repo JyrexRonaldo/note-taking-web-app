@@ -65,6 +65,12 @@ const routes = [
           {
             path: "/archived-notes",
             element: <ArchivedNotes />,
+            children: [
+              {
+                path: "/archived-notes/note-page/:id",
+                element: <NotePage />,
+              },
+            ],
           },
           {
             path: "/tags",

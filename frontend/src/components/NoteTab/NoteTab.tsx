@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 function NoteTab({
   id,
@@ -19,8 +19,19 @@ function NoteTab({
   ));
   lastEdited = format(new Date(lastEdited), "d LLL yyyy");
 
+  const location = useLocation()
+  console.log(location.pathname)
+  let pageLink = ''
+  if (location.pathname.includes('allNotes') ) {
+    pageLink = 'allNotes'
+  } else if (location.pathname.includes('archived-notes')) {
+    pageLink = 'archived-notes'
+  }
+
+  console.log(`/${pageLink}/note-page/${id}`)
+
   return (
-    <Link to={`/allNotes/note-page/${id}`}>
+    <Link to={`/${pageLink}/note-page/${id}`}>
     <div className="flex flex-col gap-[12px] p-[8px]">
       <p className="font-inter text-[16px]/[120%] font-semibold tracking-[-0.3px] text-[#0E121B] dark:text-white">
         {title}

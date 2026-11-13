@@ -2,8 +2,8 @@ import {
   useDeleteModalStatusControls,
   useArchiveModalStatusControls,
 } from "../../store";
-import { useNavigate } from "react-router";
-import { Link, useParams } from "react-router";
+// import { useNavigate } from "react-router";
+import { Link, useParams, useLocation } from "react-router";
 import data from "../../data";
 import SvgIconArrowLeft from "../../icons/IconArrowLeft";
 import SvgIconDelete from "../../icons/IconDelete";
@@ -16,25 +16,36 @@ import { format } from "date-fns";
 function NotePage({ page }: { page?: string }) {
   const params = useParams();
   // const noteData = data.notes[0];
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { setDeleteModalStatus } = useDeleteModalStatusControls();
   const { setArchiveModalStatus } = useArchiveModalStatusControls();
 
   const handleDelete = () => [setDeleteModalStatus(true)];
   const handleArchive = () => [setArchiveModalStatus(true)];
 
-  const backButtonHandler = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-  ) => {
-    e.preventDefault(); // Prevents navigating to '#'
-    navigate(-1); // Goes back to the previous page
-  };
+  // const backButtonHandler = (
+  //   e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  // ) => {
+  //   e.preventDefault(); // Prevents navigating to '#'
+  //   navigate(-1); // Goes back to the previous page
+  // };
 
   // console.log(params);
 
   const selectedNoteData = data.notes.find(
     (note) => note.id === Number(params.id),
   );
+
+  const location = useLocation()
+  console.log(location.pathname)
+  let goBackLink = ''
+  if (location.pathname.includes('allNotes') ) {
+    goBackLink = '/allNotes'
+  } else if (location.pathname.includes('archived-notes')) {
+    goBackLink = '/archived-notes'
+  }
+
+
 
   // console.log(selectedNoteData);
 
@@ -47,13 +58,15 @@ function NotePage({ page }: { page?: string }) {
     lastEdited = format(new Date(selectedNoteData.lastEdited), "d LLL yyyy");
   }
 
+
+
   return (
     <>
-      <div className="flex min-h-full grow flex-col gap-[12px] px-[16px] py-[20px] lg:gap-[16px] lg:px-[24px] dark:py-[16px]">
+      <div className="flex min-h-full grow flex-col gap-[12px] px-[16px] sm:max-lg:px-[32px] sm:max-lg:py-[24px] py-[20px] lg:gap-[16px] lg:px-[24px] dark:py-[20px]">
         <div className="flex justify-between border-b border-[#E0E4EA] pb-[12px] lg:hidden dark:border-[#232530]">
           <div>
             <Link
-              to="/allNotes"
+              to={goBackLink}
               // onClick={backButtonHandler}
               className="flex items-center gap-[4px]"
             >
