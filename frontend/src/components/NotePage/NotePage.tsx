@@ -45,6 +45,8 @@ function NotePage() {
     goBackLink = "/archived-notes";
   } else if (location.pathname.includes("tab-notes")) {
     goBackLink = "/tab-notes";
+  } else if (location.pathname.includes("search")) {
+    goBackLink = "/search";
   }
 
   // console.log(selectedNoteData);

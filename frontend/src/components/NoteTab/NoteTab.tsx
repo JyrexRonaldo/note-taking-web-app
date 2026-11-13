@@ -33,6 +33,8 @@ function NoteTab({
     pageLink = "tab-notes";
   } else if (location.pathname.includes("tags")) {
     pageLink = "tab-notes";
+  }  else if (location.pathname.includes("search")) {
+    pageLink = "search";
   }
 
   // tab-note

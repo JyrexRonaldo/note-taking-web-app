@@ -60,6 +60,16 @@ const routes = [
             ],
           },
           {
+            path: "/search",
+            element: <Search />,
+            children: [
+              {
+                path: "/search/note-page/:id",
+                element: <NotePage />,
+              },
+            ],
+          },
+          {
             path: "/settings",
             element: <Settings />,
             children: [
@@ -81,10 +91,6 @@ const routes = [
           {
             path: "/tags",
             element: <Tags />,
-          },
-          {
-            path: "/search",
-            element: <Search />,
           },
           {
             path: "/new-note",
