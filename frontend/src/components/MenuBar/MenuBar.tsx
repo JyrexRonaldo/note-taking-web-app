@@ -35,7 +35,7 @@ function MenuBar() {
   ];
 
   const menuButtons = buttonValues.map((value) => (
-    <MenuBarButton path={value.address} icon={value.icon} text={value.text} />
+    <MenuBarButton key={value.text} path={value.address} icon={value.icon} text={value.text} />
   ));
 
   return (
