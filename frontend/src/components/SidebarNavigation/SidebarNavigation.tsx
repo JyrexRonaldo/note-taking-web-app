@@ -7,6 +7,7 @@ import SvgIconHome from "../../icons/IconHome";
 import SvgIconArchive from "../../icons/IconArchive";
 import SvgIconChevronRight from "../../icons/IconChevronRight";
 import { useLocation } from "react-router";
+import clsx from "clsx";
 
 function Sidebar() {
   const location = useLocation();
@@ -35,7 +36,13 @@ function Sidebar() {
       <div className="flex grow flex-col gap-[8px]">
         <div>
           <Link to="/allNotes">
-            <button className="flex w-full items-center gap-[8px] rounded-[8px] px-[12px] py-[10px]">
+            <button
+              className={clsx(
+                "flex w-full items-center gap-[8px] rounded-[8px]",
+                location.pathname.includes("allNotes") && "bg-[#F3F5F8]",
+                "px-[12px] py-[10px]",
+              )}
+            >
               <SvgIconHome className="size-[20px] fill-[#525866] dark:fill-[#FFFFFF]" />
               <p className="font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] dark:text-[#E0E4EA]">
                 All Notes
@@ -46,7 +53,13 @@ function Sidebar() {
             </button>
           </Link>
           <Link to="/archived-notes">
-            <button className="flex w-full items-center gap-[8px] rounded-[8px] px-[12px] py-[10px]">
+            <button
+              className={clsx(
+                "flex w-full items-center gap-[8px] rounded-[8px]",
+                location.pathname.includes("archived-notes") && "bg-[#F3F5F8]",
+                "px-[12px] py-[10px]",
+              )}
+            >
               <SvgIconArchive className="size-[20px] fill-none stroke-[#525866] dark:stroke-white" />
               <p className="font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] dark:text-[#E0E4EA]">
                 Archived Notes
