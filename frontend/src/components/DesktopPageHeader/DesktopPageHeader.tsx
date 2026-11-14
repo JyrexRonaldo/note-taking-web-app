@@ -1,12 +1,30 @@
 import SearchBar from "../SearchBar/SearchBar";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import SvgIconSettings from "../../icons/IconSettings";
 
 function DesktopPageHeader() {
+  const location = useLocation();
+  // console.log(location.pathname)
+  let pageTitle = "";
+  if (location.pathname.includes("allNotes")) {
+    pageTitle = "All Notes";
+  } else if (location.pathname.includes("archived-notes")) {
+    pageTitle = "Archived Notes";
+  } else if (location.pathname.includes("tags")) {
+    const selectedTag = location.pathname.split("/")[2];
+    pageTitle = `Note Tagged: ${selectedTag}`;
+  } else if (location.pathname.includes("new-note")) {
+    pageTitle = "All Notes";
+  } else if (location.pathname.includes("settings")) {
+    pageTitle = "Settings";
+  } else if (location.pathname.includes("search")) {
+    pageTitle = `Search`;
+  }
+
   return (
     <div className="flex h-[81px] w-full items-center justify-between border-b border-b-[#E0E4EA] px-[32px] dark:border-b-[#232530]">
       <p className="font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] text-[#0E121B] dark:text-white">
-        All Notes
+        {pageTitle}
       </p>
       <div className="flex items-center gap-[16px]">
         <SearchBar placeholderText="Search by title, content, or tags..." />
