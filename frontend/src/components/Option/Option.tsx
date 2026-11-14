@@ -32,7 +32,7 @@ function Option({
           </div>
           <div className="ml-auto">
             <input
-              onInput={() => {
+              onChange={() => {
                 optionSelectHandler(value);
               }}
               type="radio"
@@ -40,7 +40,7 @@ function Option({
               value={value}
               id={value}
               className="relative h-[16px] w-[16px] appearance-none rounded-[50%] border border-[#E0E4EA] align-[-2px] checked:border-[4px] checked:border-[#335CFF]"
-              defaultChecked={isChecked}
+              checked={isChecked}
             />
           </div>
         </div>
