@@ -2,7 +2,6 @@ import {
   useDeleteModalStatusControls,
   useArchiveModalStatusControls,
 } from "../../store";
-// import { useNavigate } from "react-router";
 import { Link, useParams, useLocation } from "react-router";
 import data from "../../data";
 import SvgIconArrowLeft from "../../icons/IconArrowLeft";
@@ -17,24 +16,11 @@ import { useDefaultNoteId } from "../../store";
 function NotePage() {
   const defaultNoteId = useDefaultNoteId();
   const params = useParams();
-  // const noteData = data.notes[0];
-  // const navigate = useNavigate();
   const { setDeleteModalStatus } = useDeleteModalStatusControls();
   const { setArchiveModalStatus } = useArchiveModalStatusControls();
 
   const handleDelete = () => [setDeleteModalStatus(true)];
   const handleArchive = () => [setArchiveModalStatus(true)];
-
-  // const backButtonHandler = (
-  //   e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-  // ) => {
-  //   e.preventDefault(); // Prevents navigating to '#'
-  //   navigate(-1); // Goes back to the previous page
-  // };
-
-  // console.log(params);
-
-  console.log(defaultNoteId)
 
   const selectedNoteData = data.notes.find(
     (note) => note.id === Number(params.id),
@@ -45,8 +31,8 @@ function NotePage() {
   );
 
   const location = useLocation();
-  console.log(location.pathname.split('/')[2]);
-  const parentTag = location.pathname.split('/')[2]
+  // console.log(location.pathname.split('/')[2]);
+  const parentTag = location.pathname.split("/")[2];
   let goBackLink = "";
   if (location.pathname.includes("allNotes")) {
     goBackLink = "/allNotes";
@@ -57,8 +43,6 @@ function NotePage() {
   } else if (location.pathname.includes("search")) {
     goBackLink = "/search";
   }
-
-  // console.log(selectedNoteData);
 
   const selectedNoteTags =
     selectedNoteData?.tags.join(", ") || defaultNoteData?.tags.join(", ");
@@ -78,7 +62,6 @@ function NotePage() {
           <div>
             <Link
               to={goBackLink}
-              // onClick={backButtonHandler}
               className="flex items-center gap-[4px]"
             >
               <SvgIconArrowLeft className="size-[18px] fill-[#000] dark:fill-[#CACFD8]" />
@@ -93,7 +76,6 @@ function NotePage() {
               type="button"
               className="size-[18px]"
             >
-              {/* <img src={deleteIconUrl} alt="" /> */}
               <SvgIconDelete className="size-[18px] stroke-[#525866] dark:stroke-[#CACFD8]" />
             </button>
             <button
@@ -101,7 +83,6 @@ function NotePage() {
               type="button"
               className="size-[18px]"
             >
-              {/* <img src={archiveIconUrl} alt="" /> */}
               <SvgIconArchive className="size-[18px] stroke-[#525866] dark:stroke-[#CACFD8]" />
             </button>
             <button
@@ -120,7 +101,9 @@ function NotePage() {
         </div>
         <div>
           <p className="font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] text-[#0E121B] dark:text-[#FFFFFF]">
-            {selectedNoteData ?  selectedNoteData?.title : defaultNoteData?.title }
+            {selectedNoteData
+              ? selectedNoteData?.title
+              : defaultNoteData?.title}
           </p>
         </div>
         <div className="flex flex-col gap-[4px]">
@@ -168,8 +151,9 @@ function NotePage() {
         </div>
         <hr className="text-[#E0E4EA] dark:text-[#232530]" />
         <pre className="grow font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#232530] dark:text-[#F3F5F8]">
-          {/* {selectedNoteData?.content} */}
-          {selectedNoteData ?  selectedNoteData?.content : defaultNoteData?.content }
+          {selectedNoteData
+            ? selectedNoteData?.content
+            : defaultNoteData?.content}
         </pre>
         <hr className="hidden text-[#E0E4EA] lg:block dark:text-[#232530]" />
         <div className="hidden gap-[16px] lg:flex">
@@ -192,55 +176,3 @@ function NotePage() {
 }
 
 export default NotePage;
-
-// import NotePageContent from "../NotePageContent/NotePageContent";
-// import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
-// import data from "../../data";
-// import { Fragment } from "react/jsx-runtime";
-// import NoteTab from "../NoteTab/NoteTab";
-
-// function NotePage() {
-//   const allNotes: { title: string; tags: string[]; lastEdited: string }[] = [];
-//   data.notes.forEach((note) => {
-//     allNotes.push({
-//       title: note.title,
-//       tags: note.tags,
-//       lastEdited: note.lastEdited,
-//     });
-//   });
-
-//   const noteitemsArray: React.JSX.Element[] = [];
-//   allNotes.forEach((note, index) => {
-//     noteitemsArray.push(
-//       <Fragment key={index}>
-//         <NoteTab
-//           title={note.title}
-//           tags={note.tags}
-//           lastEdited={note.lastEdited}
-//         />
-//         {allNotes.length - 1 !== index ? (
-//           <hr className="text-[#E0E4EA] dark:text-[#232530]" />
-//         ) : null}
-//       </Fragment>,
-//     );
-//   });
-//   return (
-//     <>
-//       <div className="flex min-h-full flex-col gap-[12px] px-[16px] py-[20px] lg:hidden lg:gap-[16px] lg:px-[24px] dark:py-[16px]">
-//         <NotePageContent />
-//       </div>
-//       <div className="h-full max-lg:hidden">
-//         <div className="flex h-full pr-[32px]">
-//           <SidebarAllNotes noteitemsArray={noteitemsArray} />
-//           <div className="grow pr-[258px]">
-//             <div className="flex min-h-full flex-col gap-[12px] px-[16px] py-[20px] lg:gap-[16px] lg:px-[24px] dark:py-[16px]">
-//               <NotePageContent />
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default NotePage;

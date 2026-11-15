@@ -49,6 +49,7 @@ function FontOptions() {
       icon={data.icon}
       value={data.value as ThemeVariableType}
       optionSelectHandler={handleSetTheme}
+      isChecked
     />
   ));
 

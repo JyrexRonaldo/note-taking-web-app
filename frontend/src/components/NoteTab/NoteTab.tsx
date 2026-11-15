@@ -23,7 +23,7 @@ function NoteTab({
   lastEdited = format(new Date(lastEdited), "d LLL yyyy");
 
   const location = useLocation();
-  const selectedTag = location.pathname.split("/")[2]
+  const selectedTag = location.pathname.split("/")[2];
   let pageLink = "";
   if (location.pathname.includes("allNotes")) {
     pageLink = "allNotes";
@@ -33,8 +33,10 @@ function NoteTab({
     pageLink = `tags/${selectedTag}/tab-notes`;
   } else if (location.pathname.includes("tags")) {
     pageLink = `tags/${selectedTag}/tab-notes`;
-  }  else if (location.pathname.includes("search")) {
+  } else if (location.pathname.includes("search")) {
     pageLink = "search";
+  } else if (location.pathname.includes("new-note")) {
+    pageLink = "allNotes";
   }
 
   return (
