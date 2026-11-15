@@ -35,7 +35,7 @@ function Option({
               onChange={() => {
                 optionSelectHandler(value);
               }}
-              type="radio"
+              type="checkbox"
               name="theme"
               value={value}
               id={value}
