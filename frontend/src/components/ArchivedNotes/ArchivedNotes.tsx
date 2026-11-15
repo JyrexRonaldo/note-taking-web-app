@@ -5,9 +5,12 @@ import { Fragment } from "react/jsx-runtime";
 // import NotePageContent from "../NotePageContent/NotePageContent";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
-import { Outlet, useLocation } from "react-router";
+import {  useLocation } from "react-router";
+import { useDefaultNoteIdControls } from "../../store";
+import NotePage from "../NotePage/NotePage";
 
 function ArchivedNotes() {
+  const { setDefaultNotePageId } = useDefaultNoteIdControls();
   const location = useLocation();
   const allNotes: {
     id: number;
@@ -43,11 +46,15 @@ function ArchivedNotes() {
     );
   });
 
+  if (allNotes[0]) {
+    setDefaultNotePageId(allNotes[0].id);
+  } 
+
   return (
     <>
       {location.pathname.includes("note-page") && (
         <div className="grow lg:hidden">
-          <Outlet />
+          <NotePage />
         </div>
       )}
       {!location.pathname.includes("note-page") && (
@@ -75,7 +82,7 @@ function ArchivedNotes() {
             <NotePageContent page="archived" />
           </div> */}
           <div className="grow">
-            <Outlet />
+            <NotePage />
           </div>
           <SidebarRightMenu archivedPage={true} />
         </div>

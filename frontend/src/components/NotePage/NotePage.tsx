@@ -12,8 +12,10 @@ import SvgIconTag from "../../icons/IconTag";
 import SvgIconStatus from "../../icons/IconStatus";
 import SvgIconClock from "../../icons/IconClock";
 import { format } from "date-fns";
+import { useDefaultNoteId } from "../../store";
 
 function NotePage() {
+  const defaultNoteId = useDefaultNoteId();
   const params = useParams();
   // const noteData = data.notes[0];
   // const navigate = useNavigate();
@@ -32,8 +34,14 @@ function NotePage() {
 
   // console.log(params);
 
+  console.log(defaultNoteId)
+
   const selectedNoteData = data.notes.find(
     (note) => note.id === Number(params.id),
+  );
+
+  const defaultNoteData = data.notes.find(
+    (note) => note.id === Number(defaultNoteId),
   );
 
   const location = useLocation();
@@ -51,12 +59,15 @@ function NotePage() {
 
   // console.log(selectedNoteData);
 
-  const selectedNoteTags = selectedNoteData?.tags.join(", ");
+  const selectedNoteTags =
+    selectedNoteData?.tags.join(", ") || defaultNoteData?.tags.join(", ");
 
   let lastEdited;
 
   if (selectedNoteData) {
     lastEdited = format(new Date(selectedNoteData.lastEdited), "d LLL yyyy");
+  } else if (defaultNoteData) {
+    lastEdited = format(new Date(defaultNoteData.lastEdited), "d LLL yyyy");
   }
 
   return (
@@ -108,7 +119,7 @@ function NotePage() {
         </div>
         <div>
           <p className="font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] text-[#0E121B] dark:text-[#FFFFFF]">
-            {selectedNoteData?.title}
+            {selectedNoteData ?  selectedNoteData?.title : defaultNoteData?.title }
           </p>
         </div>
         <div className="flex flex-col gap-[4px]">
@@ -156,7 +167,8 @@ function NotePage() {
         </div>
         <hr className="text-[#E0E4EA] dark:text-[#232530]" />
         <pre className="grow font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#232530] dark:text-[#F3F5F8]">
-          {selectedNoteData?.content}
+          {/* {selectedNoteData?.content} */}
+          {selectedNoteData ?  selectedNoteData?.content : defaultNoteData?.content }
         </pre>
         <hr className="hidden text-[#E0E4EA] lg:block dark:text-[#232530]" />
         <div className="hidden gap-[16px] lg:flex">

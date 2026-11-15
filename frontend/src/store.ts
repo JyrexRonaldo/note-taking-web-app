@@ -63,7 +63,7 @@ interface ArchiveModalStoreType {
   };
 }
 
-const usArchiveModalStore = create<ArchiveModalStoreType>()((set) => {
+const useArchiveModalStore = create<ArchiveModalStoreType>()((set) => {
   return {
     archiveModalStatus: false,
     actions: {
@@ -77,11 +77,37 @@ const usArchiveModalStore = create<ArchiveModalStoreType>()((set) => {
 });
 
 const useArchiveModalStatus = () => {
-  return usArchiveModalStore((state) => state.archiveModalStatus);
+  return useArchiveModalStore((state) => state.archiveModalStatus);
 };
 
 const useArchiveModalStatusControls = () => {
-  return usArchiveModalStore((state) => state.actions);
+  return useArchiveModalStore((state) => state.actions);
+};
+
+interface DefaultNotePageIdStoreType {
+  defaultNotePageId: number | null;
+  actions: { setDefaultNotePageId: (noteId: number) => void };
+}
+
+const useDefaultNotePageIdStoreType = create<DefaultNotePageIdStoreType>()((
+  set,
+) => {
+  return {
+    defaultNotePageId: null,
+    actions: {
+      setDefaultNotePageId: (noteData) => {
+        return set(() => ({ defaultNotePageId: noteData }));
+      },
+    },
+  };
+});
+
+const useDefaultNoteId = () => {
+  return useDefaultNotePageIdStoreType((state) => state.defaultNotePageId);
+};
+
+const useDefaultNoteIdControls = () => {
+  return useDefaultNotePageIdStoreType((state) => state.actions);
 };
 
 export {
@@ -91,4 +117,6 @@ export {
   useDeleteModalStatusControls,
   useArchiveModalStatus,
   useArchiveModalStatusControls,
+  useDefaultNoteId,
+  useDefaultNoteIdControls,
 };

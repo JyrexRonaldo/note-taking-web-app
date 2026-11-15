@@ -6,9 +6,13 @@ import { Fragment } from "react/jsx-runtime";
 import SvgIconArrowLeft from "../../icons/IconArrowLeft";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
-import { Outlet, useLocation } from "react-router";
+import {  useLocation } from "react-router";
+import { useDefaultNoteIdControls } from "../../store";
+import NotePage from "../NotePage/NotePage";
+
 
 function TagNotes() {
+  const { setDefaultNotePageId } = useDefaultNoteIdControls();
   // const theme = useTheme();
   // const navigate = useNavigate();
   const location = useLocation();
@@ -54,11 +58,15 @@ function TagNotes() {
     );
   });
 
+  if (allNotes[0]) {
+    setDefaultNotePageId(allNotes[0].id);
+  } 
+
   return (
     <>
       {location.pathname.includes("/note-page") && (
         <div className="grow lg:hidden">
-          <Outlet />
+          <NotePage />
         </div>
       )}
       {!location.pathname.includes("/note-page") && (
@@ -97,7 +105,7 @@ function TagNotes() {
             <NotePageContent />
           </div> */}
           <div className="grow">
-            <Outlet />
+            <NotePage />
           </div>
           <SidebarRightMenu />
         </div>

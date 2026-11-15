@@ -5,9 +5,12 @@ import { Fragment } from "react/jsx-runtime";
 // import NotePageContent from "../NotePageContent/NotePageContent";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
-import { Outlet, useLocation } from "react-router";
+import { useLocation } from "react-router";
+import { useDefaultNoteIdControls } from "../../store";
+import NotePage from "../NotePage/NotePage";
 
 function AllNotes() {
+  const { setDefaultNotePageId } = useDefaultNoteIdControls();
   const location = useLocation();
   const allNotes: {
     id: number;
@@ -43,11 +46,16 @@ function AllNotes() {
     );
   });
 
+  if (allNotes[0]) {
+    setDefaultNotePageId(allNotes[0].id);
+  } 
+
   return (
     <>
       {location.pathname.includes("/allNotes/note-page") && (
         <div className="grow lg:hidden">
-          <Outlet />
+          {/* <Outlet /> */}
+          <NotePage />
         </div>
       )}
       {!location.pathname.includes("/allNotes/note-page") && (
@@ -68,7 +76,8 @@ function AllNotes() {
             <NotePageContent />
           </div> */}
           <div className="grow">
-            <Outlet />
+            {/* <Outlet /> */}
+            <NotePage />
           </div>
           <SidebarRightMenu />
         </div>
