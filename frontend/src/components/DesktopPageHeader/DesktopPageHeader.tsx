@@ -1,8 +1,10 @@
 import SearchBar from "../SearchBar/SearchBar";
 import { Link, useLocation } from "react-router";
 import SvgIconSettings from "../../icons/IconSettings";
+import { useSearchTerm } from "../../store";
 
 function DesktopPageHeader() {
+  const searchTerm = useSearchTerm()
   const location = useLocation();
   // console.log(location.pathname)
   let pageTitle = "";
@@ -18,7 +20,7 @@ function DesktopPageHeader() {
   } else if (location.pathname.includes("settings")) {
     pageTitle = "Settings";
   } else if (location.pathname.includes("search")) {
-    pageTitle = `Search`;
+    pageTitle = searchTerm ?  `Showing results for: ${searchTerm}` : "Search";
   }
 
   return (

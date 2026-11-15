@@ -6,9 +6,14 @@ import SearchBar from "../SearchBar/SearchBar";
 // import NotePageContent from "../NotePageContent/NotePageContent";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
-import { Outlet, useLocation } from "react-router";
+import { useLocation } from "react-router";
+import { useDefaultNoteIdControls } from "../../store";
+import NotePage from "../NotePage/NotePage";
+import { useSearchTerm } from "../../store";
 
 function Search() {
+  const { setDefaultNotePageId } = useDefaultNoteIdControls();
+  const searchTerm = useSearchTerm()
   const location = useLocation();
   const foundNotes: {
     id: number;
@@ -17,7 +22,7 @@ function Search() {
     lastEdited: string;
   }[] = [];
   data.notes
-    .filter((note) => note.tags.includes("Dev"))
+    .filter((note) => note.tags.includes(searchTerm ? searchTerm : 'Dev'))
     .forEach((note) => {
       foundNotes.push({
         id: note.id,
@@ -44,11 +49,18 @@ function Search() {
     );
   });
 
+  console.log({foundNotes})
+
+  if (foundNotes.length !== 0) {
+    setDefaultNotePageId(foundNotes[0].id);
+  }
+
   return (
     <>
       {location.pathname.includes("/note-page") && (
         <div className="grow lg:hidden">
-          <Outlet />
+          {/* <Outlet /> */}
+          <NotePage />
         </div>
       )}
       {!location.pathname.includes("/note-page") && (
@@ -60,11 +72,11 @@ function Search() {
             <SearchBar />
           </div>
           <div className="flex flex-col gap-[16px]">
-            <p className="h-[18px] w-full font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#2B303B] dark:text-[#CACFD8]">
+            {searchTerm && <p className="h-[18px] w-full font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#2B303B] dark:text-[#CACFD8]">
               All notes matching{" "}
-              <span className="text-[#0E121B] dark:text-white">”Dev”</span> are
+              <span className="text-[#0E121B] dark:text-white">{`"${searchTerm}"`}</span> are
               displayed below.
-            </p>
+            </p>}
             <div className="flex flex-col gap-[4px]">{noteitemsArray}</div>
           </div>
           <div className="fixed right-[16px] bottom-[72px] sm:max-lg:right-[35px] sm:max-lg:bottom-[104px]">
@@ -74,12 +86,13 @@ function Search() {
       )}
       <div className="h-full max-lg:hidden">
         <div className="flex h-full pr-[32px]">
-          <SidebarAllNotes noteitemsArray={noteitemsArray} />
+          <SidebarAllNotes page="search" noteitemsArray={noteitemsArray} />
           {/* <div className="flex min-h-full grow flex-col gap-[12px] px-[16px] py-[20px] lg:gap-[16px] lg:px-[24px] dark:py-[16px]">
             <NotePageContent />
           </div> */}
           <div className="grow">
-            <Outlet />
+            {/* <Outlet /> */}
+            <NotePage />
           </div>
           <SidebarRightMenu />
         </div>

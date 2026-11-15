@@ -86,10 +86,10 @@ const useArchiveModalStatusControls = () => {
 
 interface DefaultNotePageIdStoreType {
   defaultNotePageId: number | null;
-  actions: { setDefaultNotePageId: (noteId: number) => void };
+  actions: { setDefaultNotePageId: (noteId: number | null) => void };
 }
 
-const useDefaultNotePageIdStoreType = create<DefaultNotePageIdStoreType>()((
+const useDefaultNotePageIdStore = create<DefaultNotePageIdStoreType>()((
   set,
 ) => {
   return {
@@ -103,11 +103,35 @@ const useDefaultNotePageIdStoreType = create<DefaultNotePageIdStoreType>()((
 });
 
 const useDefaultNoteId = () => {
-  return useDefaultNotePageIdStoreType((state) => state.defaultNotePageId);
+  return useDefaultNotePageIdStore((state) => state.defaultNotePageId);
 };
 
 const useDefaultNoteIdControls = () => {
-  return useDefaultNotePageIdStoreType((state) => state.actions);
+  return useDefaultNotePageIdStore((state) => state.actions);
+};
+
+interface useSearchTermStoreType {
+  searchTerm: string | null;
+  actions: { setSearchTerm: (value: string) => void };
+}
+
+const useSearchTermStore = create<useSearchTermStoreType>()((set) => {
+  return {
+    searchTerm: null,
+    actions: {
+      setSearchTerm: (value) => {
+        return set(() => ({ searchTerm: value }));
+      },
+    },
+  };
+});
+
+const useSearchTerm = () => {
+  return useSearchTermStore((state) => state.searchTerm);
+};
+
+const useSearchTermControls = () => {
+  return useSearchTermStore((state) => state.actions);
 };
 
 export {
@@ -119,4 +143,6 @@ export {
   useArchiveModalStatusControls,
   useDefaultNoteId,
   useDefaultNoteIdControls,
+  useSearchTerm,
+  useSearchTermControls,
 };

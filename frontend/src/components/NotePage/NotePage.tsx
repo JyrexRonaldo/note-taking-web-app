@@ -45,14 +45,15 @@ function NotePage() {
   );
 
   const location = useLocation();
-  console.log(location.pathname);
+  console.log(location.pathname.split('/')[2]);
+  const parentTag = location.pathname.split('/')[2]
   let goBackLink = "";
   if (location.pathname.includes("allNotes")) {
     goBackLink = "/allNotes";
   } else if (location.pathname.includes("archived-notes")) {
     goBackLink = "/archived-notes";
   } else if (location.pathname.includes("tab-notes")) {
-    goBackLink = "/tab-notes";
+    goBackLink = `/tags/${parentTag}/tab-notes`;
   } else if (location.pathname.includes("search")) {
     goBackLink = "/search";
   }

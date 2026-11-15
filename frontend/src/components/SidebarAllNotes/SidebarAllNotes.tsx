@@ -1,4 +1,5 @@
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
+import { useSearchTerm } from "../../store";
 
 function SidebarAllNotes({
   noteitemsArray,
@@ -7,6 +8,7 @@ function SidebarAllNotes({
   noteitemsArray: React.JSX.Element[];
   page?: string;
 }) {
+  const searchTerm = useSearchTerm()
   return (
     <div className="flex w-[290px] flex-col gap-[16px] border-r border-r-[#E0E4EA] py-[20px] pr-[16px] pl-[32px] max-lg:hidden dark:border-r-[#232530]">
       <div>
@@ -22,6 +24,13 @@ function SidebarAllNotes({
         <p className="w-full font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#2B303B] dark:text-[#E0E4EA]">
           All notes with the{" "}
           <span className="text-[#0E121B] dark:text-[#FFFFFF]">”Dev”</span> tag
+          are shown here.
+        </p>
+      )}
+      {page === "search" && (
+        <p className="w-full font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#2B303B] dark:text-[#E0E4EA]">
+          All notes with the{" "}
+          <span className="text-[#0E121B] dark:text-[#FFFFFF]">{`"${searchTerm}"`}</span> tag
           are shown here.
         </p>
       )}
