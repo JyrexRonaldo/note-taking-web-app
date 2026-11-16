@@ -6,10 +6,9 @@ import { Fragment } from "react/jsx-runtime";
 import SvgIconArrowLeft from "../../icons/IconArrowLeft";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
-import {  useLocation } from "react-router";
+import { useLocation } from "react-router";
 import { useDefaultNoteIdControls } from "../../store";
 import NotePage from "../NotePage/NotePage";
-
 
 function TagNotes() {
   const { setDefaultNotePageId } = useDefaultNoteIdControls();
@@ -24,6 +23,9 @@ function TagNotes() {
   //   navigate(-1); // Goes back to the previous page
   // };
 
+  console.log(location.pathname.split("/"));
+  const selectedTag = location.pathname.split("/")[2]
+
   const allNotes: {
     id: number;
     title: string;
@@ -31,7 +33,7 @@ function TagNotes() {
     lastEdited: string;
   }[] = [];
   data.notes.forEach((note) => {
-    if (note.tags.includes("Dev")) {
+    if (note.tags.includes(selectedTag)) {
       allNotes.push({
         id: note.id,
         title: note.title,
@@ -60,7 +62,7 @@ function TagNotes() {
 
   if (allNotes[0]) {
     setDefaultNotePageId(allNotes[0].id);
-  } 
+  }
 
   return (
     <>

@@ -22,8 +22,7 @@ function SearchBar({ placeholderText }: { placeholderText?: string }) {
       if (!location.pathname.includes("search")) {
         navigate("/search");
       }
-      console.log(e.target.value);
-      setSearchTerm(e.target.value);
+      setSearchTerm(e.target.value.trim());
     },
     500,
   );
