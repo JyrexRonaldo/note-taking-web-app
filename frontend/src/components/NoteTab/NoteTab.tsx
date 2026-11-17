@@ -1,5 +1,6 @@
 import { format } from "date-fns";
 import { Link, useLocation } from "react-router";
+import clsx from "clsx";
 
 function NoteTab({
   id,
@@ -39,9 +40,17 @@ function NoteTab({
     pageLink = "allNotes";
   }
 
+  const selected = location.pathname.includes(`${id}`);
+
   return (
     <Link to={`/${pageLink}/note-page/${id}`}>
-      <div className="flex flex-col gap-[12px] p-[8px]">
+      <div
+        className={clsx(
+          !selected && "flex flex-col gap-[12px] rounded-[6px] p-[8px]",
+          selected &&
+            "flex flex-col gap-[12px] rounded-[6px] bg-[#F3F5F8] p-[8px]",
+        )}
+      >
         <p className="font-inter text-[16px]/[120%] font-semibold tracking-[-0.3px] text-[#0E121B] dark:text-white">
           {title}
         </p>
