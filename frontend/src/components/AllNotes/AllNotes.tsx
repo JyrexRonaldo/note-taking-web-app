@@ -27,8 +27,6 @@ function AllNotes() {
     });
   });
 
-  console.log({ location });
-
   const noteitemsArray: React.JSX.Element[] = [];
   allNotes.forEach((note, index) => {
     noteitemsArray.push(
@@ -48,7 +46,7 @@ function AllNotes() {
 
   if (allNotes[0]) {
     setDefaultNotePageId(allNotes[0].id);
-  } 
+  }
 
   return (
     <>

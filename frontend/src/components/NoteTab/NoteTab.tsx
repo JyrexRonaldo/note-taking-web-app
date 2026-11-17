@@ -48,7 +48,7 @@ function NoteTab({
         className={clsx(
           !selected && "flex flex-col gap-[12px] rounded-[6px] p-[8px]",
           selected &&
-            "flex flex-col gap-[12px] rounded-[6px] bg-[#F3F5F8] p-[8px]",
+            "flex flex-col gap-[12px] rounded-[6px] bg-[#F3F5F8] dark:bg-[#232530] p-[8px]",
         )}
       >
         <p className="font-inter text-[16px]/[120%] font-semibold tracking-[-0.3px] text-[#0E121B] dark:text-white">
