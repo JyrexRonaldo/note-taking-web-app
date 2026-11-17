@@ -2,29 +2,15 @@ import { Link } from "react-router";
 import NoteTab from "../NoteTab/NoteTab";
 import data from "../../data";
 import { Fragment } from "react/jsx-runtime";
-// import NotePageContent from "../NotePageContent/NotePageContent";
 import SvgIconArrowLeft from "../../icons/IconArrowLeft";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
 import { useLocation } from "react-router";
-import { useDefaultNoteIdControls } from "../../store";
 import NotePage from "../NotePage/NotePage";
 
 function TagNotes() {
-  const { setDefaultNotePageId } = useDefaultNoteIdControls();
-  // const theme = useTheme();
-  // const navigate = useNavigate();
   const location = useLocation();
-
-  // const backButtonHandler = (
-  //   e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-  // ) => {
-  //   e.preventDefault(); // Prevents navigating to '#'
-  //   navigate(-1); // Goes back to the previous page
-  // };
-
-  console.log(location.pathname.split("/"));
-  const selectedTag = location.pathname.split("/")[2]
+  const selectedTag = location.pathname.split("/")[2];
 
   const allNotes: {
     id: number;
@@ -60,25 +46,17 @@ function TagNotes() {
     );
   });
 
-  if (allNotes[0]) {
-    setDefaultNotePageId(allNotes[0].id);
-  }
-
   return (
     <>
       {location.pathname.includes("/note-page") && (
         <div className="grow lg:hidden">
-          <NotePage />
+          <NotePage defaultNoteId={allNotes[0].id} />
         </div>
       )}
       {!location.pathname.includes("/note-page") && (
         <div className="flex flex-col gap-[16px] px-[16px] pt-[20px] lg:hidden dark:pt-[24px]">
           <div>
-            <Link
-              to="/tags"
-              // onClick={backButtonHandler}
-              className="flex items-center gap-[4px]"
-            >
+            <Link to="/tags" className="flex items-center gap-[4px]">
               <SvgIconArrowLeft className="size-[18px] fill-[#000] dark:fill-[#CACFD8]" />
               <p className="items-center font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#525866] dark:text-[14px]/[120%] dark:font-medium dark:text-[#FFFFFF]">
                 All Tags
@@ -103,11 +81,8 @@ function TagNotes() {
       <div className="h-full max-lg:hidden">
         <div className="flex h-full pr-[32px]">
           <SidebarAllNotes page="tag" noteitemsArray={noteitemsArray} />
-          {/* <div className="flex min-h-full grow flex-col gap-[12px] px-[16px] py-[20px] lg:gap-[16px] lg:px-[24px] dark:py-[16px]">
-            <NotePageContent />
-          </div> */}
           <div className="grow">
-            <NotePage />
+            <NotePage defaultNoteId={allNotes[0].id} />
           </div>
           <SidebarRightMenu />
         </div>

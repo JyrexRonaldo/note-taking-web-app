@@ -2,15 +2,12 @@ import NoteTab from "../NoteTab/NoteTab";
 import data from "../../data";
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
 import { Fragment } from "react/jsx-runtime";
-// import NotePageContent from "../NotePageContent/NotePageContent";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
 import {  useLocation } from "react-router";
-import { useDefaultNoteIdControls } from "../../store";
 import NotePage from "../NotePage/NotePage";
 
 function ArchivedNotes() {
-  const { setDefaultNotePageId } = useDefaultNoteIdControls();
   const location = useLocation();
   const allNotes: {
     id: number;
@@ -46,20 +43,15 @@ function ArchivedNotes() {
     );
   });
 
-  if (allNotes[0]) {
-    setDefaultNotePageId(allNotes[0].id);
-  } 
-
   return (
     <>
       {location.pathname.includes("note-page") && (
         <div className="grow lg:hidden">
-          <NotePage />
+          <NotePage  defaultNoteId={allNotes[0].id}/>
         </div>
       )}
       {!location.pathname.includes("note-page") && (
         <div className="gap-[16px] px-[16px] py-[20px] max-lg:flex max-lg:flex-col sm:max-lg:px-[32px] sm:max-lg:py-[24px] lg:hidden">
-          {/* <div className="flex flex-col gap-[8px]"> */}
           <p className="w-full font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] dark:text-white">
             Archived Notes
           </p>
@@ -78,11 +70,8 @@ function ArchivedNotes() {
       <div className="h-full max-lg:hidden">
         <div className="flex h-full pr-[32px]">
           <SidebarAllNotes page="archived" noteitemsArray={noteitemsArray} />
-          {/* <div className="flex min-h-full grow flex-col gap-[12px] px-[16px] py-[20px] lg:gap-[16px] lg:px-[24px] dark:py-[16px]">
-            <NotePageContent page="archived" />
-          </div> */}
           <div className="grow">
-            <NotePage />
+            <NotePage defaultNoteId={allNotes[0].id} />
           </div>
           <SidebarRightMenu archivedPage={true} />
         </div>

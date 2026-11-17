@@ -84,32 +84,6 @@ const useArchiveModalStatusControls = () => {
   return useArchiveModalStore((state) => state.actions);
 };
 
-interface DefaultNotePageIdStoreType {
-  defaultNotePageId: number | null;
-  actions: { setDefaultNotePageId: (noteId: number | null) => void };
-}
-
-const useDefaultNotePageIdStore = create<DefaultNotePageIdStoreType>()((
-  set,
-) => {
-  return {
-    defaultNotePageId: null,
-    actions: {
-      setDefaultNotePageId: (noteData) => {
-        return set(() => ({ defaultNotePageId: noteData }));
-      },
-    },
-  };
-});
-
-const useDefaultNoteId = () => {
-  return useDefaultNotePageIdStore((state) => state.defaultNotePageId);
-};
-
-const useDefaultNoteIdControls = () => {
-  return useDefaultNotePageIdStore((state) => state.actions);
-};
-
 interface useSearchTermStoreType {
   searchTerm: string | null;
   actions: { setSearchTerm: (value: string) => void };
@@ -141,8 +115,6 @@ export {
   useDeleteModalStatusControls,
   useArchiveModalStatus,
   useArchiveModalStatusControls,
-  useDefaultNoteId,
-  useDefaultNoteIdControls,
   useSearchTerm,
   useSearchTermControls,
 };

@@ -3,16 +3,13 @@ import data from "../../data";
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
 import { Fragment } from "react/jsx-runtime";
 import SearchBar from "../SearchBar/SearchBar";
-// import NotePageContent from "../NotePageContent/NotePageContent";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
 import { useLocation } from "react-router";
-import { useDefaultNoteIdControls } from "../../store";
 import NotePage from "../NotePage/NotePage";
 import { useSearchTerm } from "../../store";
 
 function Search() {
-  const { setDefaultNotePageId } = useDefaultNoteIdControls();
   const searchTerm = useSearchTerm()
   const location = useLocation();
   const foundNotes: {
@@ -49,18 +46,11 @@ function Search() {
     );
   });
 
-  console.log({foundNotes})
-
-  if (foundNotes.length !== 0) {
-    setDefaultNotePageId(foundNotes[0].id);
-  }
-
   return (
     <>
       {location.pathname.includes("/note-page") && (
         <div className="grow lg:hidden">
-          {/* <Outlet /> */}
-          <NotePage />
+          <NotePage defaultNoteId={foundNotes[0].id} />
         </div>
       )}
       {!location.pathname.includes("/note-page") && (
@@ -87,12 +77,8 @@ function Search() {
       <div className="h-full max-lg:hidden">
         <div className="flex h-full pr-[32px]">
           <SidebarAllNotes page="search" noteitemsArray={noteitemsArray} />
-          {/* <div className="flex min-h-full grow flex-col gap-[12px] px-[16px] py-[20px] lg:gap-[16px] lg:px-[24px] dark:py-[16px]">
-            <NotePageContent />
-          </div> */}
           <div className="grow">
-            {/* <Outlet /> */}
-            <NotePage />
+            <NotePage defaultNoteId={foundNotes[0].id} />
           </div>
           <SidebarRightMenu />
         </div>

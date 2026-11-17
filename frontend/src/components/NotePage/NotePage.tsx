@@ -11,10 +11,8 @@ import SvgIconTag from "../../icons/IconTag";
 import SvgIconStatus from "../../icons/IconStatus";
 import SvgIconClock from "../../icons/IconClock";
 import { format } from "date-fns";
-import { useDefaultNoteId } from "../../store";
 
-function NotePage() {
-  const defaultNoteId = useDefaultNoteId();
+function NotePage({ defaultNoteId = null }: { defaultNoteId?: number | null }) {
   const params = useParams();
   const { setDeleteModalStatus } = useDeleteModalStatusControls();
   const { setArchiveModalStatus } = useArchiveModalStatusControls();
@@ -31,7 +29,6 @@ function NotePage() {
   );
 
   const location = useLocation();
-  // console.log(location.pathname.split('/')[2]);
   const parentTag = location.pathname.split("/")[2];
   let goBackLink = "";
   if (location.pathname.includes("allNotes")) {
@@ -60,10 +57,7 @@ function NotePage() {
       <div className="flex min-h-full grow flex-col gap-[12px] px-[16px] py-[20px] sm:max-lg:px-[32px] sm:max-lg:py-[24px] lg:gap-[16px] lg:px-[24px] dark:py-[20px]">
         <div className="flex justify-between border-b border-[#E0E4EA] pb-[12px] lg:hidden dark:border-[#232530]">
           <div>
-            <Link
-              to={goBackLink}
-              className="flex items-center gap-[4px]"
-            >
+            <Link to={goBackLink} className="flex items-center gap-[4px]">
               <SvgIconArrowLeft className="size-[18px] fill-[#000] dark:fill-[#CACFD8]" />
               <p className="items-center font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#525866] dark:text-[#CACFD8]">
                 Go Back

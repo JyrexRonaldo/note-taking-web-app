@@ -2,15 +2,12 @@ import NoteTab from "../NoteTab/NoteTab";
 import data from "../../data";
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
 import { Fragment } from "react/jsx-runtime";
-// import NotePageContent from "../NotePageContent/NotePageContent";
 import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
 import { useLocation } from "react-router";
-import { useDefaultNoteIdControls } from "../../store";
 import NotePage from "../NotePage/NotePage";
 
 function AllNotes() {
-  const { setDefaultNotePageId } = useDefaultNoteIdControls();
   const location = useLocation();
   const allNotes: {
     id: number;
@@ -44,16 +41,11 @@ function AllNotes() {
     );
   });
 
-  if (allNotes[0]) {
-    setDefaultNotePageId(allNotes[0].id);
-  }
-
   return (
     <>
       {location.pathname.includes("/allNotes/note-page") && (
         <div className="grow lg:hidden">
-          {/* <Outlet /> */}
-          <NotePage />
+          <NotePage defaultNoteId={allNotes[0].id} />
         </div>
       )}
       {!location.pathname.includes("/allNotes/note-page") && (
@@ -70,12 +62,8 @@ function AllNotes() {
       <div className="h-full max-lg:hidden">
         <div className="flex h-full pr-[32px]">
           <SidebarAllNotes noteitemsArray={noteitemsArray} />
-          {/* <div className="grow flex min-h-full flex-col gap-[12px] px-[16px] py-[20px] lg:gap-[16px] lg:px-[24px] dark:py-[16px]">
-            <NotePageContent />
-          </div> */}
           <div className="grow">
-            {/* <Outlet /> */}
-            <NotePage />
+            <NotePage defaultNoteId={allNotes[0].id} />
           </div>
           <SidebarRightMenu />
         </div>
