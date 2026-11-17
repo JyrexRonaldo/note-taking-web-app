@@ -30,10 +30,10 @@ function NoteTab({
     pageLink = "allNotes";
   } else if (location.pathname.includes("archived-notes")) {
     pageLink = "archived-notes";
-  } else if (location.pathname.includes("tab-note")) {
-    pageLink = `tags/${selectedTag}/tab-notes`;
+  } else if (location.pathname.includes("tag-note")) {
+    pageLink = `tags/${selectedTag}/tag-notes`;
   } else if (location.pathname.includes("tags")) {
-    pageLink = `tags/${selectedTag}/tab-notes`;
+    pageLink = `tags/${selectedTag}/tag-notes`;
   } else if (location.pathname.includes("search")) {
     pageLink = "search";
   } else if (location.pathname.includes("new-note")) {

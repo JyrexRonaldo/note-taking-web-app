@@ -23,7 +23,7 @@ function Sidebar() {
   allTags.forEach((tag, index) =>
     tagElementsArray.push(
       <Fragment key={index}>
-        <Link to={`/tags/${tag}/tab-notes`}>
+        <Link to={`/tags/${tag}/tag-notes`}>
           <TagItem tagName={tag} />
           {/* {allTags.length - 1 !== index ? (
             <hr className="text-[#E0E4EA] dark:text-[#232530]" />

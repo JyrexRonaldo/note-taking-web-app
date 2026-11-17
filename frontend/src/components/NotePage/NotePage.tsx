@@ -38,8 +38,8 @@ function NotePage() {
     goBackLink = "/allNotes";
   } else if (location.pathname.includes("archived-notes")) {
     goBackLink = "/archived-notes";
-  } else if (location.pathname.includes("tab-notes")) {
-    goBackLink = `/tags/${parentTag}/tab-notes`;
+  } else if (location.pathname.includes("tag-notes")) {
+    goBackLink = `/tags/${parentTag}/tag-notes`;
   } else if (location.pathname.includes("search")) {
     goBackLink = "/search";
   }

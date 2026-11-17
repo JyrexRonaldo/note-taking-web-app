@@ -50,11 +50,11 @@ const routes = [
             ],
           },
           {
-            path: "/tags/:tag/tab-notes",
+            path: "/tags/:tag/tag-notes",
             element: <TagNotes />,
             children: [
               {
-                path: "/tags/:tag/tab-notes/note-page/:id",
+                path: "/tags/:tag/tag-notes/note-page/:id",
                 element: <NotePage />,
               },
             ],
