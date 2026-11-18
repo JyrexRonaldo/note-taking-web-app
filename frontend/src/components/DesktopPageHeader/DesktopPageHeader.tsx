@@ -8,7 +8,7 @@ function DesktopPageHeader() {
   const location = useLocation();
   // console.log(location.pathname)
   let pageTitle = "";
-  if (location.pathname.includes("allNotes")) {
+  if (location.pathname.includes("all-notes")) {
     pageTitle = "All Notes";
   } else if (location.pathname.includes("archived-notes")) {
     pageTitle = "Archived Notes";

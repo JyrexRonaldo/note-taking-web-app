@@ -43,12 +43,12 @@ function AllNotes() {
 
   return (
     <>
-      {location.pathname.includes("/allNotes/note-page") && (
+      {location.pathname.includes("/all-notes/note-page") && (
         <div className="grow lg:hidden">
           <NotePage defaultNoteId={allNotes[0].id} />
         </div>
       )}
-      {!location.pathname.includes("/allNotes/note-page") && (
+      {!location.pathname.includes("/all-notes/note-page") && (
         <div className="gap-[16px] px-[16px] py-[20px] max-lg:flex max-lg:flex-col sm:max-lg:px-[32px] sm:max-lg:py-[24px] lg:hidden">
           <p className="h-[29px] font-inter text-[24px]/[120%] font-bold tracking-[-0.5px] dark:text-white">
             All Notes
