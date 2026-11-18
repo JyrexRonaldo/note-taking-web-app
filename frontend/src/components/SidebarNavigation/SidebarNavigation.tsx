@@ -11,7 +11,7 @@ import clsx from "clsx";
 
 function Sidebar() {
   const location = useLocation();
-  const allNotesSelected = location.pathname.includes("allNotes");
+  const allNotesSelected = location.pathname.includes("all-notes");
   const archivedNotesSelected = location.pathname.includes("archived-notes");
 
   let allTags: string[] = [];
@@ -38,7 +38,7 @@ function Sidebar() {
       <Header />
       <div className="flex grow flex-col gap-[8px]">
         <div>
-          <Link to="/allNotes">
+          <Link to="/all-notes">
             <button
               className={clsx(
                 !allNotesSelected &&

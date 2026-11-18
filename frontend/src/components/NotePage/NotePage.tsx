@@ -31,8 +31,8 @@ function NotePage({ defaultNoteId = null }: { defaultNoteId?: number | null }) {
   const location = useLocation();
   const parentTag = location.pathname.split("/")[2];
   let goBackLink = "";
-  if (location.pathname.includes("allNotes")) {
-    goBackLink = "/allNotes";
+  if (location.pathname.includes("all-notes")) {
+    goBackLink = "/all-notes";
   } else if (location.pathname.includes("archived-notes")) {
     goBackLink = "/archived-notes";
   } else if (location.pathname.includes("tag-notes")) {

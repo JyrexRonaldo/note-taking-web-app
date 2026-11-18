@@ -27,7 +27,7 @@ function MenuBar() {
   );
 
   const buttonValues = [
-    { address: "/allNotes", icon: homeIcon, text: "Home" },
+    { address: "/all-notes", icon: homeIcon, text: "Home" },
     { address: "/search", icon: searchIcon, text: "Search" },
     { address: "/archived-notes", icon: archiveIcon, text: "Archived" },
     { address: "/tags", icon: tagIcon, text: "Tags" },

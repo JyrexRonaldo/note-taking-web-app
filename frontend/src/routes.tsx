@@ -30,11 +30,11 @@ const routes = [
         children: [
           // { index: true, element: <AllNotes /> },
           {
-            path: "/allNotes",
+            path: "/all-notes",
             element: <AllNotes />,
             children: [
               {
-                path: "/allNotes/note-page/:id",
+                path: "/all-notes/note-page/:id",
                 element: <NotePage />,
               },
             ],

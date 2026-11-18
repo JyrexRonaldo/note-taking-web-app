@@ -26,8 +26,8 @@ function NoteTab({
   const location = useLocation();
   const selectedTag = location.pathname.split("/")[2];
   let pageLink = "";
-  if (location.pathname.includes("allNotes")) {
-    pageLink = "allNotes";
+  if (location.pathname.includes("all-notes")) {
+    pageLink = "all-notes";
   } else if (location.pathname.includes("archived-notes")) {
     pageLink = "archived-notes";
   } else if (location.pathname.includes("tag-note")) {
@@ -37,7 +37,7 @@ function NoteTab({
   } else if (location.pathname.includes("search")) {
     pageLink = "search";
   } else if (location.pathname.includes("new-note")) {
-    pageLink = "allNotes";
+    pageLink = "all-notes";
   }
 
   const selected = location.pathname.includes(`${id}`);
