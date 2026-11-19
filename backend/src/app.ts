@@ -1,6 +1,6 @@
 import { loadEnvFile } from "node:process";
 import express from "express";
-loadEnvFile()
+loadEnvFile();
 
 const app = express();
 
