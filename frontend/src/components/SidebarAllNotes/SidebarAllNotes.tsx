@@ -1,5 +1,6 @@
 import NewNoteButton from "../NewNoteButton/NewNoteButton";
 import { useSearchTerm } from "../../store";
+import { useLocation } from "react-router";
 
 function SidebarAllNotes({
   noteitemsArray,
@@ -8,7 +9,9 @@ function SidebarAllNotes({
   noteitemsArray: React.JSX.Element[];
   page?: string;
 }) {
-  const searchTerm = useSearchTerm()
+  const location = useLocation();
+  const searchTerm = useSearchTerm();
+  const selectedTag = location.pathname.split("/")[2]
   return (
     <div className="flex w-[290px] flex-col gap-[16px] border-r border-r-[#E0E4EA] py-[20px] pr-[16px] pl-[32px] max-lg:hidden dark:border-r-[#232530]">
       <div>
@@ -23,15 +26,15 @@ function SidebarAllNotes({
       {page === "tag" && (
         <p className="w-full font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#2B303B] dark:text-[#E0E4EA]">
           All notes with the{" "}
-          <span className="text-[#0E121B] dark:text-[#FFFFFF]">”Dev”</span> tag
+          <span className="text-[#0E121B] dark:text-[#FFFFFF]">”{selectedTag}”</span> tag
           are shown here.
         </p>
       )}
       {page === "search" && (
         <p className="w-full font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#2B303B] dark:text-[#E0E4EA]">
           All notes with the{" "}
-          <span className="text-[#0E121B] dark:text-[#FFFFFF]">{`"${searchTerm}"`}</span> tag
-          are shown here.
+          <span className="text-[#0E121B] dark:text-[#FFFFFF]">{`"${searchTerm}"`}</span>{" "}
+          tag are shown here.
         </p>
       )}
       <div className="flex h-[200px] grow scrollbar-none flex-col gap-[4px] overflow-scroll">
