@@ -108,6 +108,30 @@ const useSearchTermControls = () => {
   return useSearchTermStore((state) => state.actions);
 };
 
+interface useDefaultNoteIdStoreType {
+  defaultNoteId: number | null;
+  actions: { setDefaultNoteId: (value: number) => void };
+}
+
+const useDefaultNoteIdStore = create<useDefaultNoteIdStoreType>()((set) => {
+  return {
+    defaultNoteId: null,
+    actions: {
+      setDefaultNoteId: (value) => {
+        return set(() => ({ defaultNoteId: value }));
+      },
+    },
+  };
+});
+
+const useDefaultNoteId = () => {
+  return useDefaultNoteIdStore((state) => state.defaultNoteId);
+};
+
+const useDefaultNoteIdControls = () => {
+  return useDefaultNoteIdStore((state) => state.actions);
+};
+
 export {
   useTheme,
   useThemeControls,
@@ -117,4 +141,6 @@ export {
   useArchiveModalStatusControls,
   useSearchTerm,
   useSearchTermControls,
+  useDefaultNoteId,
+  useDefaultNoteIdControls,
 };
