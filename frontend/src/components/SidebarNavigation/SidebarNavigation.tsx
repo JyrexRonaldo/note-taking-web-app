@@ -42,7 +42,7 @@ function Sidebar() {
             <button
               className={clsx(
                 !allNotesSelected &&
-                  "flex w-full items-center gap-[8px] rounded-[8px] px-[12px] py-[10px]",
+                  "flex w-full items-center gap-[8px] rounded-[8px] px-[12px] py-[10px] hover:bg-[#F5F7FA] dark:hover:bg-[#232530]",
                 allNotesSelected &&
                   "flex w-full items-center gap-[8px] rounded-[8px] bg-[#F3F5F8] px-[12px] py-[10px] dark:bg-[#232530]",
               )}
@@ -73,7 +73,7 @@ function Sidebar() {
             <button
               className={clsx(
                 !archivedNotesSelected &&
-                  "flex w-full items-center gap-[8px] rounded-[8px] px-[12px] py-[10px]",
+                  "flex w-full items-center gap-[8px] rounded-[8px] px-[12px] py-[10px] hover:bg-[#F5F7FA] dark:hover:bg-[#232530]",
                 archivedNotesSelected &&
                   "flex w-full items-center gap-[8px] rounded-[8px] bg-[#F3F5F8] px-[12px] py-[10px] dark:bg-[#232530]",
               )}

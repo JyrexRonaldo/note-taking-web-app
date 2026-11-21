@@ -28,7 +28,7 @@ function SearchBar({ placeholderText }: { placeholderText?: string }) {
   );
 
   return (
-    <div className="flex items-center gap-[8px] rounded-[8px] border border-[#CACFD8] bg-[#F5F7FA] px-[16px] py-[12px] lg:h-[44px] lg:w-[300px] lg:bg-white dark:border-[#525866] dark:bg-[#0E121B]">
+    <div className="flex items-center gap-[8px] rounded-[8px] border border-[#CACFD8] bg-[#F5F7FA] px-[16px] py-[12px] hover:bg-[#F5F7FA] lg:h-[44px] lg:w-[300px] lg:bg-white dark:border-[#525866] dark:bg-[#0E121B] dark:hover:bg-[#232530]">
       <SvgIconSearch className="size-[20px] fill-[#525866] dark:fill-[#99A0AE]" />
       <input
         type="search"

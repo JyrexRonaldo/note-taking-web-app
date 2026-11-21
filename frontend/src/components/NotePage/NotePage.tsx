@@ -152,13 +152,13 @@ function NotePage({ defaultNoteId = null }: { defaultNoteId?: number | null }) {
         <hr className="hidden text-[#E0E4EA] lg:block dark:text-[#232530]" />
         <div className="hidden gap-[16px] lg:flex">
           <button
-            className="rounded-[8px] bg-[#335CFF] px-[16px] py-[12px] font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-white"
+            className="rounded-[8px] bg-[#335CFF] px-[16px] py-[12px] font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-white hover:bg-[#2547D0]"
             type="button"
           >
             Save Note
           </button>
           <button
-            className="rounded-[8px] bg-[#F3F5F8] px-[16px] py-[12px] font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#525866]"
+            className="rounded-[8px] bg-[#F3F5F8] px-[16px] py-[12px] font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#525866] hover:bg-[#F5F7FA] "
             type="button"
           >
             Cancel

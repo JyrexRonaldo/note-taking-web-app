@@ -35,7 +35,7 @@ function ChangePassword() {
               <input
                 type="password"
                 id="confirm-new-password"
-                className="h-[44px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] dark:border-[#525866] dark:text-white"
+                className="h-[44px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] hover:bg-[#F5F7FA] dark:border-[#525866] dark:text-white dark:hover:bg-[#232530]"
               />
             </div>
             <div className="flex flex-col gap-[6px]">
@@ -48,7 +48,7 @@ function ChangePassword() {
               <input
                 type="password"
                 id="new-password"
-                className="h-[42px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] placeholder:font-inter placeholder:text-[14px]/[130%] placeholder:tracking-[-0.2px] dark:border-[#525866] dark:text-white dark:placeholder:text-[#525866]"
+                className="h-[42px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] placeholder:font-inter placeholder:text-[14px]/[130%] placeholder:tracking-[-0.2px] hover:bg-[#F5F7FA] dark:border-[#525866] dark:text-white dark:placeholder:text-[#525866] dark:hover:bg-[#232530]"
               />
               <div className="flex items-center gap-[8px]">
                 {/* <img src={infoIconUrl} alt="" className="size-[16px]" /> */}
@@ -68,13 +68,13 @@ function ChangePassword() {
               <input
                 type="password"
                 id="confirm-new-password"
-                className="h-[44px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] dark:border-[#525866] dark:text-white"
+                className="h-[44px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] hover:bg-[#F5F7FA] dark:border-[#525866] dark:text-white dark:hover:bg-[#232530]"
               />
             </div>
           </div>
         </div>
         <div className="flex justify-end">
-          <button className="rounded-[8px] bg-[#335CFF] px-[16px] py-[12px] font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#FFFFFF]">
+          <button className="rounded-[8px] bg-[#335CFF] px-[16px] py-[12px] font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#FFFFFF] hover:bg-[#2547D0]">
             Save Password
           </button>
         </div>

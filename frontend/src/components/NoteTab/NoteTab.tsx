@@ -64,7 +64,8 @@ function NoteTab({
     <button
       onClick={noteTabButtonhandler}
       className={clsx(
-        !selected && "flex flex-col gap-[12px] rounded-[6px] p-[8px] text-left",
+        !selected &&
+          "flex flex-col gap-[12px] rounded-[6px] p-[8px] text-left hover:bg-[#F5F7FA] dark:hover:bg-[#232530]",
         selected &&
           "flex flex-col gap-[12px] rounded-[6px] bg-[#F3F5F8] p-[8px] text-left dark:bg-[#232530]",
         defaultTab && "lg:first:bg-[#F3F5F8] lg:first:dark:bg-[#232530]",

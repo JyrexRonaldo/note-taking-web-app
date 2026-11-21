@@ -12,7 +12,7 @@ function TagItem({ tagName }: { tagName: string }) {
       type="button"
       className={clsx(
         !selected &&
-          "flex h-[40px] w-full items-center gap-[8px] rounded-[8px] lg:px-[12px] lg:py-[10px]",
+          "flex h-[40px] hover:bg-[#F5F7FA] dark:hover:bg-[#232530] w-full items-center gap-[8px] rounded-[8px] lg:px-[12px] lg:py-[10px]",
         selected &&
           "flex h-[40px] w-full items-center gap-[8px] rounded-[8px] bg-[#F3F5F8] lg:px-[12px] lg:py-[10px] dark:bg-[#232530]",
       )}

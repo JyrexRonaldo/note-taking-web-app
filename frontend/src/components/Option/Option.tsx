@@ -18,7 +18,7 @@ function Option({
   return (
     <>
       <label htmlFor={value}>
-        <div className="flex items-center gap-[16px] rounded-[12px] border border-[#E0E4EA] p-[16px] dark:border-[#2B303B]">
+        <div className="flex items-center gap-[16px] rounded-[12px] border border-[#E0E4EA] p-[16px] hover:bg-[#F5F7FA] dark:border-[#2B303B] dark:hover:bg-[#232530]">
           <div className="rounded-[12px] border border-[#E0E4EA] p-[8px] dark:border-[#2B303B]">
             {icon}
           </div>

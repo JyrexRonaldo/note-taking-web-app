@@ -66,7 +66,7 @@ function ColorTheme() {
             className="flex items-center gap-[8px] lg:hidden"
           >
             {/* <img src={leftArrowIconUrl} alt="" /> */}
-            <SvgIconArrowLeft className="size-[24px] fill-black dark:fill-[#CACFD8]" />            
+            <SvgIconArrowLeft className="size-[24px] fill-black dark:fill-[#CACFD8]" />
             <p className="items-center font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#525866] dark:text-[#CACFD8]">
               Settings
             </p>
@@ -82,7 +82,7 @@ function ColorTheme() {
         </div>
         <div className="flex flex-col gap-[16px]">{themeOptionElements}</div>
         <div className="flex justify-end">
-          <button className="rounded-[8px] bg-[#335CFF] px-[16px] py-[12px] font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#FFFFFF]">
+          <button className="rounded-[8px] bg-[#335CFF] px-[16px] py-[12px] font-inter text-[14px]/[120%] font-medium tracking-[-0.2px] text-[#FFFFFF] hover:bg-[#2547D0]">
             Apply Changes
           </button>
         </div>
