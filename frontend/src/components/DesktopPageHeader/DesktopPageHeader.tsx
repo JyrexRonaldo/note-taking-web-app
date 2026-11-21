@@ -4,7 +4,7 @@ import SvgIconSettings from "../../icons/IconSettings";
 import { useSearchTerm } from "../../store";
 
 function DesktopPageHeader() {
-  const searchTerm = useSearchTerm()
+  const searchTerm = useSearchTerm();
   const location = useLocation();
   // console.log(location.pathname)
   let pageTitle = "";
@@ -20,7 +20,11 @@ function DesktopPageHeader() {
   } else if (location.pathname.includes("settings")) {
     pageTitle = "Settings";
   } else if (location.pathname.includes("search")) {
-    pageTitle = searchTerm ?  `Showing results for: ${searchTerm}` : "Search";
+    pageTitle = searchTerm ? `Showing results for: ${searchTerm}` : "Search";
+  }
+
+  if (searchTerm === null) {
+    pageTitle = "Select a tag from the sidebar";
   }
 
   return (

@@ -50,7 +50,7 @@ function Search() {
     <>
       {location.pathname.includes("/note-page") && (
         <div className="grow lg:hidden">
-          <NotePage defaultNoteId={foundNotes[0].id} />
+          {foundNotes.length !== 0 && <NotePage defaultNoteId={foundNotes[0].id} />}
         </div>
       )}
       {!location.pathname.includes("/note-page") && (
@@ -78,7 +78,7 @@ function Search() {
         <div className="flex h-full pr-[32px]">
           <SidebarAllNotes page="search" noteitemsArray={noteitemsArray} />
           <div className="grow">
-            <NotePage defaultNoteId={foundNotes[0].id} />
+           {foundNotes.length !== 0 && <NotePage defaultNoteId={foundNotes[0].id} />}
           </div>
           <SidebarRightMenu />
         </div>
