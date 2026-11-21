@@ -28,10 +28,10 @@ function ForgotPassword() {
               type="email"
               id="email"
               placeholder="email@example.com"
-              className="h-[42px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] font-inter text-[14px]/[130%] tracking-[-0.2px] placeholder:font-inter placeholder:text-[14px]/[130%] placeholder:tracking-[-0.2px] dark:border-[#525866] dark:text-white dark:placeholder:text-[#525866]"
+              className="h-[42px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] font-inter text-[14px]/[130%] tracking-[-0.2px] placeholder:font-inter placeholder:text-[14px]/[130%] placeholder:tracking-[-0.2px] hover:bg-[#F5F7FA] dark:border-[#525866] dark:text-white dark:placeholder:text-[#525866] dark:hover:bg-[#232530]"
             />
           </div>
-          <button className="h-[44px] rounded-[8px] bg-[#335CFF] font-inter text-[16px]/[120%] font-semibold tracking-[-0.3px] text-white">
+          <button className="h-[44px] rounded-[8px] bg-[#335CFF] font-inter text-[16px]/[120%] font-semibold tracking-[-0.3px] text-white hover:bg-[#2547D0]">
             Send Reset Link
           </button>
         </div>

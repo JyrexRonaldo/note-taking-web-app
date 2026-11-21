@@ -4,7 +4,6 @@ import SvgIconInfo from "../../icons/IconInfo";
 import SvgIconGoogle from "../../icons/IconGoogle";
 
 function Signup() {
-
   return (
     <div className="flex h-screen items-center justify-center bg-[#F3F5F8] px-[16px] py-[10px] dark:bg-[#2B303B]">
       <div className="flex w-full flex-col gap-[16px] rounded-[12px] bg-white px-[16px] py-[48px] sm:max-lg:max-w-[522px] sm:max-lg:px-[32px] lg:max-w-[540px] lg:px-[48px] dark:bg-[#0E121B]">
@@ -31,7 +30,7 @@ function Signup() {
               type="email"
               id="email"
               placeholder="email@example.com"
-              className="h-[42px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] placeholder:font-inter placeholder:text-[14px]/[130%] placeholder:tracking-[-0.2px] dark:border-[#525866] dark:text-white dark:placeholder:text-[#525866]"
+              className="h-[42px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] placeholder:font-inter placeholder:text-[14px]/[130%] placeholder:tracking-[-0.2px] hover:bg-[#F5F7FA] dark:border-[#525866] dark:text-white dark:placeholder:text-[#525866] dark:hover:bg-[#232530]"
             />
           </div>
           <div className="flex flex-col gap-[6px]">
@@ -44,7 +43,7 @@ function Signup() {
             <input
               type="password"
               id="password"
-              className="h-[44px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] dark:border-[#525866] dark:text-white"
+              className="h-[44px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] hover:bg-[#F5F7FA] dark:border-[#525866] dark:text-white dark:hover:bg-[#232530]"
             />
             <div className="flex items-center gap-[8px]">
               <SvgIconInfo className="size-[16px] stroke-[#525866] dark:stroke-[#99A0AE]" />
@@ -53,7 +52,7 @@ function Signup() {
               </p>
             </div>
           </div>
-          <button className="h-[44px] rounded-[8px] bg-[#335CFF] font-inter text-[16px]/[120%] font-semibold tracking-[-0.3px] text-white">
+          <button className="h-[44px] rounded-[8px] bg-[#335CFF] font-inter text-[16px]/[120%] font-semibold tracking-[-0.3px] text-white hover:bg-[#2547D0]">
             Sign up
           </button>
         </div>
@@ -61,7 +60,7 @@ function Signup() {
           <p className="font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#525866] dark:text-[#CACFD8]">
             Or log in with:
           </p>
-          <button className="flex items-center justify-center rounded-[12px] border-1 border-[#CACFD8] px-[12px] py-[16px] dark:border-[#525866]">
+          <button className="flex items-center justify-center rounded-[12px] border-1 border-[#CACFD8] px-[12px] py-[16px] hover:bg-[#F5F7FA] dark:border-[#525866] dark:hover:bg-[#232530]">
             <SvgIconGoogle className="h-[25px] w-[24px] fill-[#0E121B] dark:fill-[#FFFFFF]" />
             <p className="px-[16px] font-inter text-[16px]/[100%] font-medium tracking-[0.5px] dark:text-white">
               Google
@@ -72,7 +71,9 @@ function Signup() {
         <div className="text-center">
           <p className="font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#525866] dark:text-[#CACFD8]">
             Already have an account?{" "}
-            <span className="text-[#0E121B] dark:text-white">Login</span>
+            <span className="text-[#0E121B] hover:text-[#335CFF] dark:text-white">
+              Login
+            </span>
           </p>
         </div>
       </div>

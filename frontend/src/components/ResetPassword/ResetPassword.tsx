@@ -27,7 +27,7 @@ function ResetPassword() {
             <input
               type="password"
               id="new-password"
-              className="h-[42px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] placeholder:font-inter placeholder:text-[14px]/[130%] placeholder:tracking-[-0.2px] dark:border-[#525866] dark:text-white dark:placeholder:text-[#525866]"
+              className="h-[42px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] placeholder:font-inter placeholder:text-[14px]/[130%] placeholder:tracking-[-0.2px] hover:bg-[#F5F7FA] dark:border-[#525866] dark:text-white dark:placeholder:text-[#525866] dark:hover:bg-[#232530]"
             />
             <div className="flex items-center gap-[8px]">
               <SvgIconInfo className="size-[16px] stroke-[#525866] dark:stroke-[#99A0AE]" />
@@ -46,10 +46,10 @@ function ResetPassword() {
             <input
               type="password"
               id="confirm-new-password"
-              className="h-[44px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] dark:border-[#525866] dark:text-white"
+              className="h-[44px] rounded-[8px] border border-[#CACFD8] px-[16px] py-[12px] hover:bg-[#F5F7FA] dark:border-[#525866] dark:text-white dark:hover:bg-[#232530]"
             />
           </div>
-          <button className="h-[44px] rounded-[8px] bg-[#335CFF] font-inter text-[16px]/[120%] font-semibold tracking-[-0.3px] text-white">
+          <button className="h-[44px] rounded-[8px] bg-[#335CFF] font-inter text-[16px]/[120%] font-semibold tracking-[-0.3px] text-white hover:bg-[#2547D0]">
             Reset Password
           </button>
         </div>
