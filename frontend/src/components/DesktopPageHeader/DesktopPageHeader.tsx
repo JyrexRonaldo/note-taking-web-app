@@ -14,17 +14,15 @@ function DesktopPageHeader() {
     pageTitle = "Archived Notes";
   } else if (location.pathname.includes("tags")) {
     const selectedTag = location.pathname.split("/")[2];
-    pageTitle = `Note Tagged: ${selectedTag}`;
+    pageTitle = selectedTag
+      ? `Note Tagged: ${selectedTag}`
+      : "Select a tag from the sidebar";
   } else if (location.pathname.includes("new-note")) {
     pageTitle = "All Notes";
   } else if (location.pathname.includes("settings")) {
     pageTitle = "Settings";
   } else if (location.pathname.includes("search")) {
     pageTitle = searchTerm ? `Showing results for: ${searchTerm}` : "Search";
-  }
-
-  if (searchTerm === null) {
-    pageTitle = "Select a tag from the sidebar";
   }
 
   return (

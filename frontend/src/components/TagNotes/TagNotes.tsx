@@ -34,7 +34,7 @@ function TagNotes() {
 
   const noteitemsArray: React.JSX.Element[] = [];
   allNotes.forEach((note, index) => {
-    if (pathLength === 2 && index === 0) {
+    if (pathLength === 4 && index === 0) {
       setDefaultNoteId(note.id);
     }
     noteitemsArray.push(
