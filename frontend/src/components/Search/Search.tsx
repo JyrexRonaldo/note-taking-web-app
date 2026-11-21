@@ -8,10 +8,13 @@ import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
 import { useLocation } from "react-router";
 import NotePage from "../NotePage/NotePage";
 import { useSearchTerm } from "../../store";
+import { useDefaultNoteIdControls } from "../../store";
 
 function Search() {
-  const searchTerm = useSearchTerm()
+  const searchTerm = useSearchTerm();
   const location = useLocation();
+  const { setDefaultNoteId } = useDefaultNoteIdControls();
+  const pathLength = location.pathname.split("/").length;
   const foundNotes: {
     id: number;
     title: string;
@@ -19,7 +22,7 @@ function Search() {
     lastEdited: string;
   }[] = [];
   data.notes
-    .filter((note) => note.tags.includes(searchTerm ? searchTerm : 'Dev'))
+    .filter((note) => note.tags.includes(searchTerm ? searchTerm : "Dev"))
     .forEach((note) => {
       foundNotes.push({
         id: note.id,
@@ -31,6 +34,9 @@ function Search() {
 
   const noteitemsArray: React.JSX.Element[] = [];
   foundNotes.forEach((note, index) => {
+    if (pathLength === 2 && index === 0) {
+      setDefaultNoteId(note.id);
+    }
     noteitemsArray.push(
       <Fragment key={index}>
         <NoteTab
@@ -50,7 +56,9 @@ function Search() {
     <>
       {location.pathname.includes("/note-page") && (
         <div className="grow lg:hidden">
-          {foundNotes.length !== 0 && <NotePage defaultNoteId={foundNotes[0].id} />}
+          {foundNotes.length !== 0 && (
+            <NotePage defaultNoteId={foundNotes[0].id} />
+          )}
         </div>
       )}
       {!location.pathname.includes("/note-page") && (
@@ -62,11 +70,13 @@ function Search() {
             <SearchBar />
           </div>
           <div className="flex flex-col gap-[16px]">
-            {searchTerm && <p className="h-[18px] w-full font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#2B303B] dark:text-[#CACFD8]">
-              All notes matching{" "}
-              <span className="text-[#0E121B] dark:text-white">{`"${searchTerm}"`}</span> are
-              displayed below.
-            </p>}
+            {searchTerm && (
+              <p className="h-[18px] w-full font-inter text-[14px]/[130%] tracking-[-0.2px] text-[#2B303B] dark:text-[#CACFD8]">
+                All notes matching{" "}
+                <span className="text-[#0E121B] dark:text-white">{`"${searchTerm}"`}</span>{" "}
+                are displayed below.
+              </p>
+            )}
             <div className="flex flex-col gap-[4px]">{noteitemsArray}</div>
           </div>
           <div className="fixed right-[16px] bottom-[72px] sm:max-lg:right-[35px] sm:max-lg:bottom-[104px]">
@@ -78,7 +88,9 @@ function Search() {
         <div className="flex h-full pr-[32px]">
           <SidebarAllNotes page="search" noteitemsArray={noteitemsArray} />
           <div className="grow">
-           {foundNotes.length !== 0 && <NotePage defaultNoteId={foundNotes[0].id} />}
+            {foundNotes.length !== 0 && (
+              <NotePage defaultNoteId={foundNotes[0].id} />
+            )}
           </div>
           <SidebarRightMenu />
         </div>

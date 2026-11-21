@@ -7,10 +7,13 @@ import SidebarRightMenu from "../SidebarRightMenu/SidebarRightMenu";
 import SidebarAllNotes from "../SidebarAllNotes/SidebarAllNotes";
 import { useLocation } from "react-router";
 import NotePage from "../NotePage/NotePage";
+import { useDefaultNoteIdControls } from "../../store";
 
 function TagNotes() {
   const location = useLocation();
   const selectedTag = location.pathname.split("/")[2];
+  const { setDefaultNoteId } = useDefaultNoteIdControls();
+  const pathLength = location.pathname.split("/").length;
 
   const allNotes: {
     id: number;
@@ -31,6 +34,9 @@ function TagNotes() {
 
   const noteitemsArray: React.JSX.Element[] = [];
   allNotes.forEach((note, index) => {
+    if (pathLength === 2 && index === 0) {
+      setDefaultNoteId(note.id);
+    }
     noteitemsArray.push(
       <Fragment key={index}>
         <NoteTab
